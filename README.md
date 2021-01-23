@@ -4,11 +4,11 @@
 <p><b>Apuntado al Publico en general</b></p>
 <p><b>Referencias:</b></p>
 <ul>
-<li>- https://www.domestika.org/</li>
-<li>- https://www.edx.org/</li>
-<li>- https://www.udemy.com/</li>
-<li>- https://www.disneyplus.com/</li>
-<li>- https://www.openenglish.com/</li>
+<li>https://www.domestika.org/</li>
+<li>https://www.edx.org/</li>
+<li>https://www.udemy.com/</li>
+<li>https://www.disneyplus.com/</li>
+<li>https://www.openenglish.com/</li>
 </ul>
 <p><i> Referencias detalladas en Benchmarking.pdf </i></p>
 <h2> Enlaces a tablero de trabajo: </h2>

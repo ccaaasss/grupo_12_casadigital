@@ -1,7 +1,7 @@
 <h1># grupo_12_casadigital</h1>
 <h2>PROYECTO INTEGRADOR</h2>
 <h3>Casa Digital - Portal de venta de cursos online</h3>
-<b>Apuntado al Publico en general</b>
+<p><b>Apuntado al Publico en general</b></p>
 <p><b>Referencias:</b></p>
 <p>- https://www.domestika.org/</p>
 <p>- https://www.edx.org/</p>

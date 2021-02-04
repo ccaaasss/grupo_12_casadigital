@@ -10,6 +10,15 @@ app.use(express.static (publicPath));
 app.get ('/', (req,res) =>{
     res.sendFile (path.resolve ('views/home.html'))
 })
+app.get ('/productCart', (req,res) =>{
+    res.sendFile (path.resolve ('views/productCart.html'))
+})
+app.get ('/register', (req,res) =>{
+    res.sendFile (path.resolve ('views/register.html'))
+})
+app.get ('/login', (req,res) =>{
+    res.sendFile (path.resolve ('views/login.html'))
+})
 
 //levanto server express en puerto 8000
 app.listen (8000, () => {

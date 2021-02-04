@@ -1,21 +1,13 @@
 {
-  "name": "casa_digital",
+  "name": "home_design",
   "version": "1.0.0",
-  "description": "<h1># grupo_12_casadigital</h1>\r <h2>PROYECTO INTEGRADOR</h2>\r <h3>Casa Digital - Portal de venta de cursos online</h3>\r <p><b>Apuntado al Publico en general</b></p>\r <p><b>Referencias:</b></p>\r <ul>\r <li>https://www.domestika.org/</li>\r <li>https://www.edx.org/</li>\r <li>https://www.udemy.com/</li>\r <li>https://www.disneyplus.com/</li>\r <li>https://www.openenglish.com/</li>\r </ul>\r <p><i> Referencias detalladas en Benchmarking.pdf </i></p>\r <h2> Enlaces a tablero de trabajo: </h2>\r <ul>\r <li>Sprint#1: https://trello.com/b/pYS1lmjc/sprint-1 </li>\r <li>Sprint#2: https://trello.com/b/TxZxe6u1/sprint-2 </li>\r </ul>",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ccaaasss/grupo_12_casadigital.git"
-  },
-  "author": "grupo12",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ccaaasss/grupo_12_casadigital/issues"
-  },
-  "homepage": "https://github.com/ccaaasss/grupo_12_casadigital#readme",
   "dependencies": {
     "express": "^4.17.1"
   }

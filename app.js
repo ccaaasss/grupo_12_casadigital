@@ -1,26 +1,17 @@
-//requiero paquetes y genero las variables(espress,path)
-const express = require ('express');
-const path = require ('path');
-const app = express ();
-const publicPath = path.resolve ('public');
+const express= require('express');
 
-app.use(express.static (publicPath));
+const path=require('path')
 
-//hago la peticion al server de las htmls
-app.get ('/', (req,res) =>{
-    res.sendFile (path.resolve ('views/home.html'))
-})
-app.get ('/productCart', (req,res) =>{
-    res.sendFile (path.resolve ('views/productCart.html'))
-})
-app.get ('/register', (req,res) =>{
-    res.sendFile (path.resolve ('views/register.html'))
-})
-app.get ('/login', (req,res) =>{
-    res.sendFile (path.resolve ('views/login.html'))
+const publicPath=path.resolve('public');
+
+const app= express()
+
+app.use(express.static(publicPath));
+
+app.get('/',function (req,res){
+       res.sendFile(path.resolve(__dirname,'./views/index.html'))
 })
 
-//levanto server express en puerto 8000
-app.listen (8000, () => {
-    console.log ('Servidor corriendo en puerto 8000');
+app.listen (3000, () =>{
+    console.log('Servidor corriendo en el puerto 3000');
 })

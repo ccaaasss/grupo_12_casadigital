@@ -9,7 +9,7 @@ Realizada la retro del Sprint#1 el Martes 25/01/2021:
 
 Sprint #02
 ==========
-Realizada la retro del Sprint#1 el Miércoles 10/02/2021
+Realizada la retro del Sprint#2 el Miércoles 10/02/2021
 
 Este sprint nos sirvió para conocernos un poco mejor como grupo y fortalecer la relación de colaboración entre nosotros. Gracias a eso pudimos terminar el sprint y llegar a la presentación sin pendientes.
 

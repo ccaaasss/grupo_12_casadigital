@@ -1,17 +1,14 @@
-// Requiero el módulo "path"
-const path=require("path");
-
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const mainController ={
-    index: (req, res)=>{ res.sendFile(path.resolve("views/home.html"))},
+    index: (req, res)=>{ res.render ('home')},
 
-    login: (req, res)=>{ res.sendFile(path.resolve("views/users/login.html"))},
+    login: (req, res)=>{ res.render ('./users/login')},
 
-    register: (req,res) =>{res.sendFile (path.resolve ('views/users/register.html'))},
+    register: (req,res) =>{res.render ('./users/register')},
 
-    productCart: (req,res) =>{res.sendFile (path.resolve ('views/products/productCart.html'))},
+    productCart: (req,res) =>{res.render ('./products/productCart')},
     
-    productDetail: (req,res) =>{res.sendFile (path.resolve ('views/products/productDetail.html'))}
+    productDetail: (req,res) =>{res.render ('./products/productDetail')}
 }
 
 module.exports = mainController

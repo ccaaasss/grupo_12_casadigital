@@ -19,6 +19,7 @@ app.use("/login", mainRoutes);
 app.use("/register", mainRoutes);
 app.use("/productCart", mainRoutes);
 app.use("/productDetail", mainRoutes);
+app.use("/newProduct", mainRoutes);
 
 
 //levanto server express en puerto 8000

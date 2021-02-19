@@ -10,31 +10,7 @@
     <link rel="stylesheet" href="css/productDetail.css">
 </head>
 <body>
-    <header>
-        <div class="main-header">
-            <a href="/"><img src="/images/Logo.jpg" class="logo"></a>
-            <nav class="main-navbar">
-              <div class="navbar">                  
-                    <ul>
-                        <li><a href="/"><i class="fas fa-home"></i></a></li>
-                        <li><a href="/" class="text-nav"> Inicio</a></li>
-                        <li><a href="#"><i class="fas fa-bars"></i></a></li>
-                        <li><a href="#" class="text-nav"> Categorias</a></li>
-                        <li><a href="/productCart"><i class="fas fa-plus"></i></a></li>
-                        <li><a href="/productCart" class="text-nav"> Mi Lista</a></li>
-                        <li><a href="#"><i class="fas fa-users"></i></a></li>
-                        <li><a href="#" class="text-nav"> Comunidad</a></li>
-                        <li><a href="#"><i class="fas fa-search"></i></a></li>
-                        <li><a href="#" class="text-nav-1"> Buscar</a></li>
-                    </ul>
-              </div>
-              <div class="login">
-                    <p class="login-parrafo">Login</p>
-                    <i class="fas fa-user-graduate"></i>
-              </div>
-            </nav>
-        </div>
-    </header>
+    <%- include("../partials/header.ejs") %>
 
     <main>
         <div class="container">
@@ -220,23 +196,7 @@
         
         </div>
     </main>
-
-    <footer class="main-footer">
-        <img src="/images/Logo.jpg" class="logo-footer">
-        <div class="footer-redes">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter-square"></i>
-        </div>
-        <div class="politicas">
-          <a href="#">Politicas de privacidad</a>
-          <a href="#">Politicas de cookies</a>
-          <a href="#">Condiciones de uso</a>
-        </div>
-        <div class="disclaimer">
-          <i class="far fa-copyright"></i>
-          <p>Casa Digital. Todos los derechos reservados</p>
-        </div>
-    </footer>
+    <%- include("../partials/footer.ejs") %>
+    
 </body>
 </html>

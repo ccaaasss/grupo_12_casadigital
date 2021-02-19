@@ -8,7 +8,9 @@ const mainController ={
 
     productCart: (req,res) =>{res.render ('./products/productCart')},
     
-    productDetail: (req,res) =>{res.render ('./products/productDetail')}
+    productDetail: (req,res) =>{res.render ('./products/productDetail')},
+
+    newProduct: (req,res) =>{res.render ('./products/newProduct')},
 }
 
 module.exports = mainController

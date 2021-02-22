@@ -6,7 +6,7 @@
     <script src="https://kit.fontawesome.com/0faaad1c63.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/newProduct.css">
     <link rel="stylesheet" href="/css/normalize.css">
     
     <title>Nuevo Producto</title>
@@ -14,49 +14,63 @@
     
 </head>
 <body>
-  <%- include ('../partials/header.ejs') %>
+    <%- include("../partials/header.ejs") %>
 
- <main class="main-style">       
-    <h2 class="frase">Completa los datos para dar de alta tu curso online:</h2>
+    <main class="main-style">       
+        <h2 class="frase">Completa los datos para dar de alta el curso online:</h2>
 
-    <form action="/formulario-carga" method="POST">
-            <div class="main-forms-container">
-                <div>    
-                    <input type="nombre-de-producto" name="name" autocomplete="off" 
-                placeholder="Nombre del producto" class="form-format">
-                </div>
-                <div>                
-                    <input type="descripcion" name="description" autocomplete="off" 
-                placeholder="Descripción del producto" class="form-format">
-                </div>
-                <div>                
-                    <input type="file" accept=".jpg" name="photo" class="form-format">
-                </div>
-                <div>                
-                    <input type="categoria" name="category" autocomplete="off" 
-                    placeholder="Categoría del producto" class="form-format">
-                </div>
-                <div>                
-                    <input type="detalles" name="details" autocomplete="off" 
-                    placeholder="Detalles del temario" class="form-format">
-                </div>
-                <div>                
-                    <input type="precio" name="price" autocomplete="off" 
-                    placeholder="Costo del curso" class="form-format">
-                </div>
+            <form action="/formulario-carga" method="POST">
+                <div class="main-forms-container">
+                    <div class="form-box">    
+                        <input type="text" name="name" autocomplete="off" 
+                        placeholder="Nombre del producto" class="form-format">
+                    </div>
 
-            </div>
+                    <div class="form-box">                
+                        <label class="body-format">Elegir una foto para el Curso:</label>
+                        <input type="file" name="product-photo" accept=".jpg" class="form-format">
+                    </div>
 
-            <p class="body-format">Confirma la carga de tu producto</p>
-        <div>
-            <button type="submit" class="create-button">Crear curso</button>
-         </div>
-         
-        </form>
-        <div class="end-frase">
-        <p>¿Ya tienes cuenta? <a href="/login" class="link">Entrar</a></p>
-        </div>
+                    <div class="form-box">
+                        <label class="body-format">Descripcion del curso:</label>
+                        <textarea class="form-format detail" rows="3" required=""></textarea>
+                    </div>
+
+                    <div class="form-box">  
+                        <p class="body-format">Categorias:</p>              
+                        <select name="category" autocomplete="off" placeholder="Categoría del producto" class="form-format">
+                            <option class="form-select" value=deportes>Deportes</option>
+                            <option class="form-select" value=diseño>Diseño</option>
+                            <option class="form-select" value=programacion>Programacion</option>
+                            <option class="form-select" value=coaching>Coaching</option>
+                        </select>    
+                    </div>
+
+                    <div class="form-box">
+                        <p class="body-format">Detalles del temario:</p>
+                        <textarea class="form-format detail" rows="3" required=""></textarea>
+                    </div>
+
+                    <div class="form-box">                
+                        <input type="text" name="price" autocomplete="off" 
+                        placeholder="Costo del curso" class="form-format ">
+                    </div>
+
+                    <div class="form-box">
+                        <p class="body-format">Confirma la carga del curso</p>
+                    </div>
+                </div>
+                <div class="secondari-forms-container">
+                    <div class="form-box">
+                            <button type="submit" class="buttons">Crear curso</button>
+                    </div>
+
+                    <div class="form-box">
+                        <button type="reset" class="buttons">Borrar</button>
+                    </div>
+                </div>    
+            </form>
     </main>
-    <%- include ('../partials/footer.ejs') %>
+<%- include ('../partials/footer.ejs') %>
 </body>
 </html>

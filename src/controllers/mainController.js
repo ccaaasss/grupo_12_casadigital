@@ -2,15 +2,9 @@
 const mainController ={
     index: (req, res)=>{ res.render ('home')},
 
-    login: (req, res)=>{ res.render ('./users/login')},
+    search: (req, res)=>{ res.render ('home')},
 
-    register: (req,res) =>{res.render ('./users/register')},
-
-    productCart: (req,res) =>{res.render ('./products/productCart')},
-    
-    productDetail: (req,res) =>{res.render ('./products/productDetail')},
-
-    newProduct: (req,res) =>{res.render ('./products/newProduct')},
-}
+    login: (req, res)=>{ res.render ('./users/login')}, 
+};
 
 module.exports = mainController

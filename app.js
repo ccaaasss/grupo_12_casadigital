@@ -2,12 +2,20 @@
 const express = require ('express');
 const path = require ('path');
 const app = express ();
+const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
 const publicPath = path.resolve ('./public');
 console.log (publicPath);
 
 //Requiero el/los archivo/s de rutas que se usarán para dirigir las paticiones:
 const mainRoutes = require("./src/routes/main.js");
+const productsRoutes = require("./src/routes/products.js");
+const usersRoutes = require("./src/routes/users.js");
+
+//Defino el/los middlewares que se usarán de forma global:
 app.use(express.static (publicPath));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method')); // Para poder pisar el method="POST" en el formulario por PUT y DELETE
 
 // Establezco Engine de Vistas
 app.set('view engine', 'ejs');
@@ -15,11 +23,12 @@ app.set('views' , './src/views/')
 
 //Indico para cada petición, el archivo de rutas que lo manejará:
 app.use("/", mainRoutes);
-app.use("/login", mainRoutes);
-app.use("/register", mainRoutes);
-app.use("/productCart", mainRoutes);
-app.use("/productDetail", mainRoutes);
-app.use("/newProduct", mainRoutes);
+app.use("/login", usersRoutes);
+app.use("/register", usersRoutes);
+app.use('/products', productsRoutes);
+app.use("/productCart", productsRoutes);
+app.use("/productDetail", productsRoutes);
+app.use("/newProduct", productsRoutes);
 
 
 //levanto server express en puerto 8000

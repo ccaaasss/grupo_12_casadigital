@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/79191db9a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <title>Casa Digital - Todos los productos</title>
+</head>
+<body>
+<%- include ('../partials/header.ejs') %>
+  <main>
+    <div class="main-contenedor">
+      <% for (category of categories) {%>
+        <div class="div-separadores">
+          <p class="separadores"><%= category %></p>
+        </div>
+        <div class="product-box">
+          <% for (product of products) {%>
+            <% if (product.category == category) { 	%>
+              <div class="main-categorias">
+                <div class="category">
+                  <a href="/products/<%= product.id %>/detail/"><img src="/images/products/<%= product.image %>" alt="imagen de producto"></a>
+                </div>
+                <article class="product-detail-info">
+                  <h2 class="product-detail-title"><%= product.name %></h2>
+                    <% let finalPrice = product.price - (product.price * product.discount / 100); %>
+                    <% if (product.discount > 0) { 	%>
+                      <p class="product-detail-price small">
+                        <span>$ <%= product.price %></span>
+                        /
+                        <b><%= product.discount %>% OFF</b>
+                      </p>
+                      <p class="product-detail-price">
+                        $ <%= toThousand(finalPrice.toFixed(0)) %>
+                      </p>
+                    <% } else {  %>
+                      <p class="product-detail-price">
+                        $ <%= toThousand(finalPrice.toFixed(0)) %>
+                      </p>
+                    <% } %>
+                </article>
+              </div>
+            <% } %>
+            
+          <% } %>
+        </div>
+        
+      <% } %>
+      
+    </div>
+  </main>
+  <%- include ('../partials/footer.ejs') %>
+</body>
+</html>

@@ -7,6 +7,8 @@ const usersController = require("../controllers/usersController.js")
 
 // Defino las rutas, es decir que controlador y cuál de sus métodos es el que va a manejar el requerimiento
 router.get("/", usersController.index);
+router.get("/login", usersController.login);
+router.get("/register", usersController.register);
 // router.get("/register", usersController.register);
 
 

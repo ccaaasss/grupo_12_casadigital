@@ -50,7 +50,11 @@ const productsController ={
 		res.redirect('/products');
     },
 
-    detail: (req,res) =>{res.render ('./products/productDetail')},
+    detail: (req,res) =>{
+        let product = products.find( product => product.id == req.params.id );
+        
+        res.render ('./products/productDetail', {product, toThousand})
+    },
 
 // Envia formulario de edicion
     edit: (req,res) =>{

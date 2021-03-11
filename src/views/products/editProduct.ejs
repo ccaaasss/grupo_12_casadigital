@@ -17,7 +17,7 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="main-style">       
-        <h2 class="frase">Completa los datos para dar de alta el curso online:</h2>
+        <h2 class="frase">Estas editando el curso "agregar nombre dinamico del curso"</h2>
 
             <form action="/formulario-carga" method="POST">
                 <div class="main-forms-container">
@@ -76,11 +76,14 @@
                 </div>
                 <div class="secondari-forms-container">
                     <div class="form-box">
-                            <button type="submit" class="buttons">Crear curso</button>
+                            <button type="submit" class="buttons">CONFIRMAR CAMBIOS</button>
                     </div>
 
                     <div class="form-box">
-                        <button type="reset" class="buttons">Borrar</button>
+						<!-- <form action="/products/<%=//product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR CURSO</button>
+                        </form> -->
+                        <button type="submit" class="buttons">ELIMINAR CURSO</button>
                     </div>
                 </div>    
             </form>

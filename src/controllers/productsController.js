@@ -33,7 +33,7 @@ const productsController ={
     detail: (req,res) =>{res.render ('./products/productDetail')},
 
     edit: (req,res) =>{
-
+        res.render ('./products/editProduct')
     },
 
     update: (req,res) =>{

@@ -27,14 +27,14 @@ router.get("/", productsController.index);
 
 //  Creación de productos
 router.get("/newProduct", productsController.create);
-router.post('/',upload.single("image") , productsController.store);
+router.post('/', upload.single("image") , productsController.store);
 
 //  Detalle de un producto particular
 router.get("/:id/productDetail", productsController.detail);
 
 //  Edición de productos
 router.get('/:id/edit', productsController.edit); 
-router.put('/:id', productsController.update);
+router.put('/:id', upload.single("image") , productsController.update);
 
 //  Borrado de productos
 router.delete('/:id', productsController.destroy);

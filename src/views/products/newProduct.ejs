@@ -19,45 +19,45 @@
     <main class="main-style">       
         <h2 class="frase">Completa los datos para dar de alta el curso online:</h2>
 
-            <form action="/formulario-carga" method="POST">
+            <form action="/products" method="POST">
                 <div class="main-forms-container">
                     <div class="form-box">    
-                        <input type="text" name="name" autocomplete="off" 
+                        <input type="text" name="course_title" autocomplete="off" 
                         placeholder="Titulo del curso" class="form-format">
                     </div>
                     
                     <div class="form-box">
                         <p class="body-format">Descripción resumida:</p>
-                        <input class="form-format" type="text" name="resumida"></input>
+                        <input class="form-format" type="text" name="short_description"></input>
                     </div>
                     <div class="form-box">                
                         <label class="body-format">Elegir una foto para el Curso:</label>
-                        <input type="file" name="product-photo" accept=".jpg" class="form-format">
+                        <input type="file" name="image" accept=".jpg" class="form-format">
                     </div>
 
                     <div class="form-box">
                         <label class="body-format">Descripcion del curso:</label>
-                        <textarea class="form-format detail" rows="3" required=""></textarea>
+                        <textarea class="form-format detail" rows="3" required="" name="long_description"></textarea>
                     </div>
 
                     <div class="form-box">  
                         <p class="body-format">Categorias:</p>              
                         <select name="category" autocomplete="off" placeholder="Categoría del producto" class="form-format">
-                            <option class="form-select" value=deportes>Finanzas</option>
-                            <option class="form-select" value=diseño>Excel</option>
-                            <option class="form-select" value=programacion>Desarrollo</option>
-                            <option class="form-select" value=coaching>Fotografía</option>
+                            <option class="form-select" value=finanzas>Finanzas</option>
+                            <option class="form-select" value=excel>Excel</option>
+                            <option class="form-select" value=desarrollo>Desarrollo</option>
+                            <option class="form-select" value=fotografia>Fotografía</option>
                         </select>    
                     </div>
 
                     <div class="form-box">
                         <label class="body-format">Conocimientos previos</label>
-                        <textarea class="form-format detail" rows="3" required=""></textarea>
+                        <textarea class="form-format detail" rows="3" required="" name="requirements"></textarea>
                     </div> 
 
                     <div class="form-box">
                         <label class="body-format">A quien está dirigido?</label>
-                        <textarea class="form-format detail" rows="3" required=""></textarea>
+                        <textarea class="form-format detail" rows="3" required="" name="who_can"></textarea>
                     </div>        
 
                     <div class="form-box">                

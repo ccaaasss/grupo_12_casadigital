@@ -24,24 +24,73 @@ const productsController ={
         res.render("./products/products",{products, categories, toThousand});
     },
 
+// Envia al form to create
     create: (req,res) =>{res.render ('./products/newProduct')},
 
+// Crea - Method To create
     store: (req,res) =>{
-
+		let image
+		
+		if(req.file != undefined){
+			image = req.file.filename
+		} else {
+			image = 'default-image.jpg'
+		}
+		
+		let ids = products.map(p=>p.id)
+		let newProduct = {
+			id: Math.max(...ids)+1,
+			...req.body,
+			image: image,
+            creation_date: new Date(),
+            currency: 'ARS'
+		};
+		products.push(newProduct)
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		res.redirect('/products');
     },
 
     detail: (req,res) =>{res.render ('./products/productDetail')},
 
+// Envia formulario de edicion
     edit: (req,res) =>{
-        res.render ('./products/editProduct')
+        let productToEdit = products.find(product=>product.id==req.params.id)
+        res.render ('./products/editProduct',{productToEdit,toThousand})
     },
 
-    update: (req,res) =>{
+// EDITA - Method to Update
+	update: (req, res) => {
+		let id = req.params.id;
+		let productToEdit = products.find(product => product.id == id)
+		let image
+		if(req.file != undefined){
+			image = req.file.filename
+		} else {
+			image = productToEdit.image
+		}
 
-    },
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+			image: image,
+		};
+		
+		let newProducts = products.map(product => {
+			if (product.id == productToEdit.id) {
+				return product = {...productToEdit};
+			}
+			return product;
+		})
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+		res.redirect('/products');
+	},
 
     destroy: (req,res) =>{
-
+		let id = req.params.id;
+		let finalProducts = products.filter(product => product.id != id);
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+		res.redirect('/');
     },
     
 

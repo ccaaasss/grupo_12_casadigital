@@ -30,7 +30,11 @@ const productsController ={
 
     },
 
-    detail: (req,res) =>{res.render ('./products/productDetail')},
+    detail: (req,res) =>{
+        let product = products.find( product => product.id == req.params.id );
+        
+        res.render ('./products/productDetail', {product, toThousand})
+    },
 
     edit: (req,res) =>{
         res.render ('./products/editProduct')

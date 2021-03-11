@@ -18,52 +18,43 @@
       <img src="/images/products/sale2.jpg" class="sale">
     </div>
     <div class="main-categorias">
-    <div class="category">
-      <img src="/images/products/desarrollo.jpg" alt="">
-    </div>
-    <div class="category">
-      <img src="/images/products/fotografia.jpg" alt="">
-    </div>
-    <div class="category">
-      <img src="/images/products/finanzas.jpg" alt="">
-    </div>
-    <div class="category">
-      <img src="/images/products/personal.jpg" alt="">
-    </div>    
+      <div class="category">
+        <img src="/images/products/desarrollo.jpg" alt="">
+      </div>
+      <div class="category">
+        <img src="/images/products/fotografia.jpg" alt="">
+      </div>
+      <div class="category">
+        <img src="/images/products/finanzas.jpg" alt="">
+      </div>
+      <div class="category">
+        <img src="/images/products/personal.jpg" alt="">
+      </div>    
     </div>
     <div class="div-separadores">
       <p class="separadores">NOVEDADES EN LA CASA DIGITAL</p>
     </div>
     <div class="main-categorias">
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/Excel.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/Photo.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/web.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/Hacking.jpg" alt=""></a>
-      </div> 
+      <% for (product of products) {%>
+        <% let hoy = new Date() %>
+        <% if (parseInt((hoy - Date.parse(product.creation_date))/(24*3600*1000)) < 30) { 	%>
+          <div class="category">
+            <a href="/products/<%= product.id %>/productDetail"><img src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
+          </div>
+        <% } %>
+      <% } %>
     </div>
     <div class="div-separadores">
       <p class="separadores">LO MAS VENDIDO</p>
     </div>
     <div class="main-categorias">
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/Excel.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/Photo.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/web.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/products/Hacking.jpg" alt=""></a>
-      </div>  
+      <% for (product of products) {%>
+        <% if (product.top_seller) { 	%>
+          <div class="category">
+            <a href="/products/<%= product.id %>/productDetail"><img src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
+          </div>
+        <% } %>
+      <% } %>
     </div>
     <div class="div-separadores">
       <p class="separadores">COMUNIDAD</p>

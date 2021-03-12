@@ -37,27 +37,27 @@
 
                     <div class="form-box">
                         <label class="body-format">Descripcion del curso:</label>
-                        <textarea class="form-format detail" rows="3" required="" name="long_description" value="<%= productToEdit.long_description %>"></textarea>
+                        <textarea class="form-format detail" rows="3" name="long_description"><%= productToEdit.long_description %></textarea>
                     </div>
 
                     <div class="form-box">  
                         <p class="body-format">Categorias:</p>              
                         <select name="category" autocomplete="off" placeholder="Categoría del producto" class="form-format">
-                            <option class="form-select" value=deportes>Finanzas</option>
-                            <option class="form-select" value=diseño>Excel</option>
-                            <option class="form-select" value=programacion>Desarrollo</option>
-                            <option class="form-select" value=coaching>Fotografía</option>
+                            <option class="form-select" value=Finanzas <%= productToEdit.category=='Finanzas' ? 'selected' :''%>>Finanzas</option>
+                            <option class="form-select" value=Excel <%= productToEdit.category=='Excel' ? 'selected' :''%>>Excel</option>
+                            <option class="form-select" value=Desarrollo <%= productToEdit.category=='Desarrollo' ? 'selected' :''%>>Desarrollo</option>
+                            <option class="form-select" value=Fotografia <%= productToEdit.category=='Fotografia' ? 'selected' :''%>>Fotografía</option>
                         </select>    
                     </div>
 
                     <div class="form-box">
                         <label class="body-format">Conocimientos previos</label>
-                        <textarea class="form-format detail" rows="3" required="" name="requirements" value="<%= productToEdit.requirements %>"></textarea>
+                        <textarea class="form-format detail" rows="3" name="requirements"><%= productToEdit.requirements %></textarea>
                     </div> 
 
                     <div class="form-box">
                         <label class="body-format">A quien está dirigido?</label>
-                        <textarea class="form-format detail" rows="3" required="" name="who_can" value="<%= productToEdit.who_can %>"></textarea>
+                        <textarea class="form-format detail" rows="3" name="who_can"><%= productToEdit.who_can %></textarea>
                     </div>        
 
                     <div class="form-box">                

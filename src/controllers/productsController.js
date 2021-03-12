@@ -32,7 +32,7 @@ const productsController ={
 		let image
 		
 		if(req.file != undefined){
-			image = req.file.filename
+			image = req.file
 		} else {
 			image = 'default-image.jpg'
 		}
@@ -43,9 +43,12 @@ const productsController ={
 			...req.body,
 			image: image,
             creation_date: new Date(),
-            currency: 'ARS'
+            currency: 'ARS',
+            audio: "Ingles",
+            subtitles: "Español",
+            course_owner: "Profesor Ejemplo"
 		};
-		products.push(newProduct)
+		products.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 		res.redirect('/products');
     },
@@ -91,10 +94,11 @@ const productsController ={
 	},
 
     destroy: (req,res) =>{
-		let id = req.params.id;
-		let finalProducts = products.filter(product => product.id != id);
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
+		let productsEdited = products.filter((product) => {
+			return (product.id != req.params.id);
+		});
+		fs.writeFileSync(productsFilePath, JSON.stringify(productsEdited, null, " "));
+		res.redirect("/products/");
     },
     
 

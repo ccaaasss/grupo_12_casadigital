@@ -25,24 +25,7 @@
                 <div class="category">
                   <a href="/products/<%= product.id %>/productDetail/"><img src="/images/products/<%= product.image %>" alt="imagen de producto"></a>
                 </div>
-                <article class="product-detail-info">
-                  <h2 class="product-detail-title"><%= product.name %></h2>
-                    <% let finalPrice = product.price - (product.price * product.discount / 100); %>
-                    <% if (product.discount > 0) { 	%>
-                      <p class="product-detail-price small">
-                        <span>$ <%= product.price %></span>
-                        /
-                        <b><%= product.discount %>% OFF</b>
-                      </p>
-                      <p class="product-detail-price">
-                        $ <%= toThousand(finalPrice.toFixed(0)) %>
-                      </p>
-                    <% } else {  %>
-                      <p class="product-detail-price">
-                        $ <%= toThousand(finalPrice.toFixed(0)) %>
-                      </p>
-                    <% } %>
-                </article>
+
               </div>
             <% } %>
             

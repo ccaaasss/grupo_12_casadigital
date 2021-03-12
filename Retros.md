@@ -25,3 +25,12 @@ Este sprint nos sirvió para conocernos un poco mejor como grupo y fortalecer la
   
 5. Dejar de hacer
 	Dejar pasar los primeros días del sprint hasta el primer daily.
+
+Sprint #03 
+==========
+Realizada la retro del Sprint#2 el Jueves 25/02/2021
+
+- Coordinamos mejor, le hicimos caso a la retro 2 en casi todo y fuimos mas organizados
+- Gran colaboracion de todo el equipo ante problemas de alguno de los miembros
+- Seguimos gestionando no de la mejor manera los tiempo, si bien en este sprint llegamos mas holgados se puede mejorar
+- Relajarnos y confiar en que el otro lo puede hacer por mi es algo que debemos hacer menos.

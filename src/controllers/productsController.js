@@ -41,7 +41,7 @@ const productsController ={
 		let image
 		
 		if(req.file != undefined){
-			image = req.file
+			image = req.file.filename
 		} else {
 			image = 'default-image.jpg'
 		}

@@ -25,3 +25,26 @@ Este sprint nos sirvió para conocernos un poco mejor como grupo y fortalecer la
   
 5. Dejar de hacer
 	Dejar pasar los primeros días del sprint hasta el primer daily.
+
+Sprint #03 
+==========
+Realizada la retro del Sprint#3 el Jueves 25/02/2021
+
+- Coordinamos mejor, le hicimos caso a la retro 2 en casi todo y fuimos mas organizados
+- Gran colaboracion de todo el equipo ante problemas de alguno de los miembros
+- Seguimos gestionando no de la mejor manera los tiempo, si bien en este sprint llegamos mas holgados se puede mejorar
+- Relajarnos y confiar en que el otro lo puede hacer por mi es algo que debemos hacer menos.
+
+Sprint #04 
+==========
+Realizada la retro del Sprint#4 el Viernes 12/03/2021.
+1. Comenzar a hacer
+	Adelantarnos a los tiempos personales y comunicarlo al grupo para que el impacto sea menor. 
+2. Hacer más	
+	Ser más comunicativos.	
+3. Contiuar haciendo
+	Ser cumplidores con las entregas y trabajar coordinadamente
+4. Hacer menos
+	
+5. Dejar de hacer
+	Dejar tiempo ocioso entre el inicio de Sprint y empezar a trabajar

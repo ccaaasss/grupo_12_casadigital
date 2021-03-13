@@ -14,6 +14,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const productsController ={
 
+// Muestra todos los productos ordenados en categorías
     index: (req, res)=>{
         let categories = [];
         products.forEach((product)=>{
@@ -23,6 +24,14 @@ const productsController ={
         });
         res.render("./products/products",{products, categories, toThousand});
     },
+
+// Muestra todos los productos de la categoría seleccionada:
+	byCategory: (req, res)=>{
+		let categories = [];
+		categories.push(req.params.category);
+		res.render("./products/products",{products, categories, toThousand});
+	},
+
 
 // Envia al form to create
     create: (req,res) =>{res.render ('./products/newProduct')},

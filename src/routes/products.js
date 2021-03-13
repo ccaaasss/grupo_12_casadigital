@@ -25,6 +25,9 @@ const upload = multer({storage: storage});
 //  Listado de productos:
 router.get("/", productsController.index);
 
+//  Listado de productos de una categoría:
+router.get("/:category", productsController.byCategory);
+
 //  Creación de productos
 router.get("/newProduct", productsController.create);
 router.post('/', upload.single("image") , productsController.store);

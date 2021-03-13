@@ -19,29 +19,31 @@
     </div>
     <div class="main-categorias">
       <div class="category">
-        <img src="/images/products/desarrollo.jpg" alt="">
+        <a href="/products/Desarrollo"><img src="/images/products/desarrollo.jpg" alt=""></a>        
       </div>
       <div class="category">
-        <img src="/images/products/fotografia.jpg" alt="">
+        <a href="/products/Fotografia"><img src="/images/products/fotografia.jpg" alt=""></a>        
       </div>
       <div class="category">
-        <img src="/images/products/finanzas.jpg" alt="">
+        <a href="/products/Finanzas"><img src="/images/products/finanzas.jpg" alt=""></a>        
       </div>
       <div class="category">
-        <img src="/images/products/personal.jpg" alt="">
+        <a href="/products/Personal"><img src="/images/products/personal.jpg" alt=""></a>        
       </div>    
     </div>
     <div class="div-separadores">
       <p class="separadores">NOVEDADES EN LA CASA DIGITAL</p>
     </div>
     <div class="main-categorias">
+      <% let counter = 0 %>
       <% for (product of products) {%>
         <% let hoy = new Date() %>
-        <% if (parseInt((hoy - Date.parse(product.creation_date))/(24*3600*1000)) < 30) { 	%>
+        <% if (parseInt((hoy - Date.parse(product.creation_date))/(24*3600*1000)) < 30 && counter < 4) { 	%>
           <div class="category">
             <a href="/products/<%= product.id %>/productDetail"><img src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
           </div>
-        <% } %>
+          
+        <% counter++ } %>
       <% } %>
     </div>
     <div class="div-separadores">
@@ -61,16 +63,16 @@
     </div>
     <div class="main-categorias">
       <div class="category">
-        <a href="/productDetail"><img src="/images/products/Excel.jpg" alt=""></a>
+        <a href="/productDetail"><img src="/images/Comunity_01.jpg" alt=""></a>
       </div>
       <div class="category">
-        <a href="/productDetail"><img src="/images/products/Photo.jpg" alt=""></a>
+        <a href="/productDetail"><img src="/images/Comunity_02.jpg" alt=""></a>
       </div>
       <div class="category">
-        <a href="/productDetail"><img src="/images/products/web.jpg" alt=""></a>
+        <a href="/productDetail"><img src="/images/Comunity_03.jpg" alt=""></a>
       </div>
       <div class="category">
-        <a href="/productDetail"><img src="/images/products/Hacking.jpg" alt=""></a>
+        <a href="/productDetail"><img src="/images/Comunity_04.jpg" alt=""></a>
       </div>   
     </div>
   </div>

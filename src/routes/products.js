@@ -28,6 +28,9 @@ router.get("/", productsController.index);
 //  Listado de productos de una categoría:
 router.get("/:category", productsController.byCategory);
 
+//  Listado de productos de por docente (Comunidad):
+router.get("/community/:community", productsController.byCommunity);
+
 //  Creación de productos
 router.get("/newProduct", productsController.create);
 router.post('/', upload.single("image") , productsController.store);

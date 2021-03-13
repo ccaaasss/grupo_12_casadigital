@@ -32,6 +32,12 @@ const productsController ={
 		res.render("./products/products",{products, categories, toThousand});
 	},
 
+// Muestra todos los productos de la categoría seleccionada:
+	byCommunity: (req, res)=>{
+		let community = req.params.community;		
+		res.render("./products/community",{products, community, toThousand});
+	},
+
 
 // Envia al form to create
     create: (req,res) =>{res.render ('./products/newProduct')},

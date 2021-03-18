@@ -23,12 +23,8 @@ app.set('views' , './src/views/')
 
 //Indico para cada petición, el archivo de rutas que lo manejará:
 app.use("/", mainRoutes);
-//app.use("/login", usersRoutes);
 app.use("/users", usersRoutes);
 app.use('/products', productsRoutes);
-// app.use("/productCart", productsRoutes);
-// app.use("/productDetail", productsRoutes);
-// app.use("/newProduct", productsRoutes);
 
 
 //levanto server express en puerto 8000

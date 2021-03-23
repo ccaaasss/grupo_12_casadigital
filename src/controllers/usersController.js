@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //  Requires
 const { fileLoader } = require('ejs');
 const fs = require('fs');
@@ -12,15 +11,12 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 
 
-=======
->>>>>>> 711c8e57c1d07a309c7bfdfecc7fcdf74c93814e
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const usersController ={
     index: (req, res)=>{ res.render ('./users/register')},
 
     login: (req, res)=>{ res.render ('./users/login')},
 
-<<<<<<< HEAD
     register: (req, res)=>{ res.render ('./users/register')}, 
     // Crea - Method To create
     store: (req,res) =>{
@@ -52,13 +48,4 @@ const usersController ={
 }
 
 
-=======
-    register: (req, res)=>{ res.render ('./users/register')},
-
-    // register: armar método POST register
-
-    
-}
-
->>>>>>> 711c8e57c1d07a309c7bfdfecc7fcdf74c93814e
 module.exports = usersController

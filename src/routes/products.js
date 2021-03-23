@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// Requiero los módulos de node que se van a usar:
-=======
 // Requiero los módulos de node que se van ausar:
->>>>>>> 711c8e57c1d07a309c7bfdfecc7fcdf74c93814e
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");

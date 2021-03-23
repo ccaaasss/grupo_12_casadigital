@@ -11,24 +11,18 @@ const mainRoutes = require("./src/routes/main.js");
 const productsRoutes = require("./src/routes/products.js");
 const usersRoutes = require("./src/routes/users.js");
 
-<<<<<<< HEAD
 //Requiero express session
 const session= require('express-session');
 
-=======
->>>>>>> 711c8e57c1d07a309c7bfdfecc7fcdf74c93814e
 //Defino el/los middlewares que se usarán de forma global:
 app.use(express.static (publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method')); // Para poder pisar el method="POST" en el formulario por PUT y DELETE
-<<<<<<< HEAD
 app.use(session({secret: "password",
 resave:false,
 saveUninitialized:false}));
 
-=======
->>>>>>> 711c8e57c1d07a309c7bfdfecc7fcdf74c93814e
 
 // Establezco Engine de Vistas
 app.set('view engine', 'ejs');

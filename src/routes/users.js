@@ -23,16 +23,16 @@ const upload = multer({storage: storage});
 
 
 // Creación de usuarios 
-router.get("/register", usersController.index);
+router.get("/register", usersController.register);
 router.post('/', upload.single("image") , usersController.store);
 
 
 // Defino las rutas, es decir que controlador y cuál de sus métodos es el que va a manejar el requerimiento
-router.get("/", usersController.index);
+// router.get("/", usersController.index);
+// Proceso de formulario de Login
 router.get("/login", usersController.login);
+router.post("/", usersController.loginProcess);
 
-//Boton registro para validar y guardar datos(tira error)
-//router.post ('/register, {check('email').isEmail(), check('password').isLength({min:8}).withMessage ('La contraseña debe tener como mínimo 8 caracteres')},userscontroller.processregister')
 
 
 

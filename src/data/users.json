@@ -116,5 +116,113 @@
   "password": "$2b$10$i.RnWsTG.eZtc68gnpzJrOjcVh8gAsSyBb9wy2r9GopTuWM.34wCu",
   "birth_date": "1994-02-08",
   "image": "img-1616531502759.jpg"
+ },
+ {
+  "id": 13,
+  "first_name": "Lucas",
+  "last_name": "Cortes",
+  "email": "lucas.cortes@gmail.com",
+  "password": "$2b$10$ZJcsy81nsU9ysilCyQTD4u8jKBGVuiKlFqeLkxxs5MwAv84SY1fiS",
+  "birth_date": "1999-03-11",
+  "image": "img-1616534651350.jpg"
+ },
+ {
+  "id": 14,
+  "email": "lucas.cortes@gmail.com",
+  "password": "$2b$10$jh/jaEU2bJ0lFV3KwZHPz.DJ77eppNo7s4AkAK1I8tMlHYK4q7Wn6",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 15,
+  "email": "lucas.cortes@gmail.com",
+  "password": "$2b$10$EgTS17MtujBrVjPO/mDKt.r2PmGdD1OG/mjVnS7bzURcc.a3u6Ps2",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 16,
+  "email": "lucas.cortes@gmail.com",
+  "password": "$2b$10$AOGr0SH9I8RSSXAfrdyZkuL8VePERdyKE9finR3NvZxjivDk1Iua2",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 17,
+  "first_name": "lucas",
+  "last_name": "lucas",
+  "email": "lucas@lucas",
+  "password": "$2b$10$ySpJ4vklBMKlKF/XBn3Gb.rVajTfhWSK0N/Fj3jR66x8SSGG7MRqG",
+  "birth_date": "1111-11-11",
+  "image": "img-1616536627424.jpg"
+ },
+ {
+  "id": 18,
+  "email": "lucas@lucas",
+  "password": "$2b$10$NgezeHGyDFxles7gDTCLcuCe1iU1j8LCuXoSmOIX.J7YfyB17EDPO",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 19,
+  "email": "lucas@lucas",
+  "password": "$2b$10$dmku0iLKBVx12AdMi6k.J.7/ItcmdNnFDCBagaYAJ/.0wYD83XsOG",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 20,
+  "email": "lucas@lucas",
+  "password": "$2b$10$LfXq2jMfGeo/97OE6TGL/uiDy51oCmZdV7vrkIS1A1FPDw7WNkqmm",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 21,
+  "email": "asd@asd",
+  "password": "$2b$10$iW.nwoDIHY0XE2n7ZQ/tZOIpHr2Bqj3FOhgfzlsJmg1TmiskBTSdC",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 22,
+  "email": "",
+  "password": "$2b$10$ycM77RjvWYkkhF5V/rs.PuNKrK8wgWhSfCdenr9mCEzjE3aAQCpMW",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 23,
+  "email": "lucas@lucas",
+  "password": "$2b$10$Gno4txtweYkiL5eYbz41JuPHd3IjgC7pkshiI8NE/Dd3GPyfRiqHC",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 24,
+  "email": "lucas@lucas",
+  "password": "$2b$10$TEdyyGIa3e3O0e8FFEvx7uUuDvMzPtU1HS22nf7uBEUw.o1DJKsni",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 25,
+  "first_name": "aa",
+  "last_name": "aaa",
+  "email": "hola@hola",
+  "password": "$2b$10$x0wZiZ65LQmqYcHqKEOLYOyDJHKytKvjxKmK9D9pyXnB5elJXCPrq",
+  "birth_date": "1111-11-11",
+  "image": "img-1616537877311.jpg"
+ },
+ {
+  "id": 26,
+  "first_name": "aa",
+  "last_name": "aaa",
+  "email": "hola@hola",
+  "password": "$2b$10$BtHLddswB25/mHLyPiI6GuUbGhy0gbqEvvs8Vu417Bf9bbpQ2qKs.",
+  "birth_date": "1111-11-11",
+  "image": "img-1616537894062.jpg"
+ },
+ {
+  "id": 27,
+  "email": "hola@hola",
+  "password": "$2b$10$.p1g55smyJXX7nK84udPNeokW5F0EnVlU4joQywfzyeyuG1EQuFpG",
+  "image": "default-avatar.jpg"
+ },
+ {
+  "id": 28,
+  "email": "hola@hola",
+  "password": "$2b$10$9aGeeqEo3YUn3a2otX8U2enqRoFsVURWEXmrmKai./BV10Tc5h7MK",
+  "image": "default-avatar.jpg"
  }
 ]

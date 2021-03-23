@@ -3,6 +3,7 @@ const { fileLoader } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const { use } = require('../routes/users');
 
 
 // Lectura de la DB json a formato array de objetos
@@ -13,7 +14,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const usersController ={
-    index: (req, res)=>{ res.render ('./users/register')},
+    // index: (req, res)=>{ res.render ('./users/')},
 
     login: (req, res)=>{ res.render ('./users/login')},
 
@@ -42,10 +43,22 @@ const usersController ={
         };
         users.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify( users, null, ' '));
-        res.redirect('/users');
+        res.redirect('/users/register');
     },
-   
+    loginProcess: (req, res) => {
+        let userToLogin = users.find( user => user.email == req.params.email );
+        console.log(userToLogin);
+        if(userToLogin != undefined && bcryptjs.compareSync(req.body.password, userToLogin.password )) {            
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                res.render("./users/profile", {userToLogin: userToLogin})
+            } else {
+                res.redirect("./users/login")
+
+            }
+
+        }
 }
 
 
-module.exports = usersController
+module.exports = usersController ;

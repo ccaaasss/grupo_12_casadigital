@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #161d20;
+    background-color: black;
 }
 
 /*HEADER*/
@@ -17,8 +17,7 @@ body {
     background-color:black;
     max-width: 1200px;
     margin: auto;
-    border-bottom: 1px solid #e3ecfa;
-}
+    }
 .logo {
     width: 50px;
     height: 50px;
@@ -43,6 +42,9 @@ body {
     font-size: 10px;
     margin-right: 15px;
     display: none;
+}
+.text-nav:hover {
+    border-bottom: #fce130 4px solid;
 }
 .text-nav-1 {
     background-color: #e3ecfa;
@@ -286,15 +288,13 @@ div.stat-lists {
 
 .main-footer {
     background-color: black;
-    width: 100%;
-    height: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    border-top: 1px solid #e3ecfa;
+    
 }
 .logo-footer {
     width: 40px;

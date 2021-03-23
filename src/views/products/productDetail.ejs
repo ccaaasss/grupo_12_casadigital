@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CasaDigital - Tu carrito de compras</title>
+    <title>CasaDigital - <%= product.course_title %></title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css ">
-    <link rel="stylesheet" href="css/productDetail.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
 </head>
 <body>
     <%- include("../partials/header.ejs") %>
@@ -17,42 +17,43 @@
             <div class="row">
                 <div class="col-der">
                     <section class="header-curso">
+                        <% if (product.top_seller) { 	%> 
                         <span class="top-seller">TOP VENTAS</span>
-                        <h1 class="main-title">Google Ads y Facebook Ads desde cero</h1>
-                        <h4 class="main-subtitle-mobile">Aprende a crear campañas en Google y Facebook para potenciar tu marca o negocio</h4>
+                        <% } %>
+                        <h1 class="main-title"><%= product.course_title %></h1>
+                        <h4 class="main-subtitle-mobile"><%= product.short_description %></h4>
                         <div class="teacher-badge">
                             <p class="teachers-text">
-                                Un curso de Arantxa & Guille Consultores de marketing digital. Barcelona, España.
+                                Un curso dictado por <%= product.course_owner %>
                             </p>
-                            <img src="/images/profes.jpg" alt="">
                         </div>
                         
                         <div class="course-stats-mobile">
-                            <span>
+                            <!-- <span>
                                 <i class="fas fa-thumbs-up"></i>
                                 96% valoraciones positivas (2.1 K)
-                            </span>
+                            </span> -->
                             <div class="stat-lists">
                                 <ul class="list-left">                                
-                                    <li>
+                                    <!-- <li>
                                         <i class="far fa-user"></i>
                                         80969 alumnos                                
                                     </li>
-                                    
+                                     -->
                                     <li><i class="fas fa-volume-up"></i>
-                                        Audio: Español
+                                        Audio: <%= product.audio %> 
                                     </li>
                                     <li>
                                         <i class="far fa-smile"></i>
                                         Online y a tu ritmo
                                     </li>
                                     <li>
-                                        <i class="far fa-chart-bar"></i>
+                                        <!-- <i class="far fa-chart-bar"></i>
                                         Iniciación
-                                    </li>                                
+                                    </li>                                 -->
                                 </ul>
                                 <ul class="list-right">                                
-                                    <li>
+                                    <!-- <li>
                                         <i class="fas fa-book-reader"></i>
                                         25 lecciones (4h 1m)                                
                                     </li>
@@ -60,10 +61,10 @@
                                     <li>
                                         <i class="fas fa-mobile-alt"></i>
                                         Disponible desde la app
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <i class="far fa-closed-captioning"></i>
-                                        Español, Inglés, Portugués, Alemán
+                                        <%= product.subtitles %>
                                     </li>
                                     <li>
                                         <i class="fas fa-infinity"></i>
@@ -81,26 +82,23 @@
                         </div>
                     </div>
                     <div class="course-image">
-                        <img src="/images/Curso2_video.JPG" alt="Video del curso">
+                        <img src="/images/products/<%= product.image %>" alt="Video del curso">
                     </div>
 
                     <section class="course-presentation">
                         <h4 class="Presentation">Presentación</h4>
                         
                         <div class="content">
-                            <h4 class="titulo">Aprende a crear campañas en Google y Facebook para potenciar tu marca o negocio</h4>
+                            <h4 class="titulo"><%= product.short_description %></h4>
                             <p>
-                                En la actualidad, ya no es suficiente con tener un buen negocio o marca entre manos; ahora también hay que saber moverlo, optimizarlo y posicionarlo para que pueda llegar a una audiencia determinada. Es ahí, donde entra el marketing digital y donde los consultores Arantxa Beltrán y Guillermo Medina, pueden ayudar a tu negocio. Han trabajado para marcas como Letgo, Hawkers, Spotahome o Chicfy entre otros, y han formado parte de empresas tan punteras como Amazon, Google o Facebook.
+                                <%= product.long_description %>
                             </p>                            
-                            <p>
-                                En este curso, Arantxa y Guillermo te enseñarán a crear campañas de marketing digital en Google Ads y Facebook e Instagram Ads, consideradas a día de hoy las dos plataformas más importantes en el ámbito del marketing digital. Adquirirás de una forma 100% práctica los conocimientos necesarios para crear campañas y sacarles el mayor rendimiento.
-                            </p>
                         </div>
-                        <div class="Google">
-                            <img src="/images/Google-ads.jpg" alt="Google Ads">
-                        </div>
+                        <!-- <div class="Google">
+                            <img src="/images/products/Google-ads.jpg" alt="Google Ads">
+                        </div> -->
                     </section>
-                    <section class="Included">
+                    <!-- <section class="Included">
                         <h4 class="incluye">¿Qué incluye este curso?</h4>
                         <div class="content-table">
                             <span>TABLA DE CONTENIDOS DEL CURSO</span>
@@ -146,12 +144,12 @@
                             </p>
 
                         </div>                        
-                    </section>
+                    </section> -->
                     <section class="directed-to">
                         <h4 class="directed">¿A quién está dirigido?</h4>
                         <div class="directed-text">
                             <p>
-                                A diseñadores, ilustradores, artistas, community managers y cualquier persona que esté buscando la forma de iniciarse en el mundo del marketing digital y aprender a crear campañas de pago en Google, Facebook e Instagram para hacer crecer su negocio o proyecto.
+                                <%= product.who_can %>
                             </p>
                         </div>
                     </section>
@@ -159,28 +157,32 @@
                         <h4 class="required">Requisitos</h4>
                         <div class="required-text">
                             <p>
-                                No es necesario tener ningún tipo de conocimiento previo, únicamente necesitarás un un ordenador con conexión a internet para poder crear las campañas de Google Ads y Facebook Ads para tu proyecto.
+                                <%= product.requirements %>
                             </p>
-                        </div>
-                        <div class="required-image">
-                            <img src="/images/notebook.jpg" alt="Notebook">
-
                         </div>
                     </section>
                 </div>
                 
                 <div class="comprar">
                     <div class="price-col">
-                        <div class="price-badges">
-                            <span class="badge"> REBAJAS </span>
-                            <span class="price-discount"> 70% Dto. </span>
-                            <span class="price-code"> AR$ </span>
-                            <span class="discounted-price"> 3.000</span>
-                        </div>
-                        <div class="item-price">
-                            <span class="price-code"> AR$ </span>
-                            <span class="price"> 2.100</span>
-                        </div>
+                        <% let finalPrice = product.price - (product.price * product.discount / 100); %>
+                        <% if (product.discount > 0) { 	%>
+                            <div class="price-badges">
+                                <span class="badge"> REBAJAS </span>
+                                <span class="price-discount"> <%= product.discount %>  % Dto. </span>
+                                <span class="price-code"> <%= product.currency %> </span>
+                                <span class="discounted-price"> <%= product.price %></span>
+                            </div>
+                            <div class="item-price">
+                                <span class="price-code"> <%= product.currency %> </span>
+                                <span class="price"> <%= toThousand(finalPrice.toFixed(0)) %></span>
+                            </div>
+                        <% } else {  %>
+                            <div class="item-price">
+                                <span class="price-code"> <%= product.currency %> </span>
+                                <span class="price"> <%= toThousand(finalPrice.toFixed(0)) %></span>
+                            </div>
+                        <% } %>   
                     </div>
                     
                     <div class="cart-checkout">

@@ -6,7 +6,7 @@
     <script src="https://kit.fontawesome.com/0faaad1c63.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="/css/newProduct.css">
+    <link rel="stylesheet" href="/css/editProduct.css">
     <link rel="stylesheet" href="/css/normalize.css">
     
     <title>Nuevo Producto</title>
@@ -17,72 +17,71 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="main-style">       
-        <h2 class="frase">Completa los datos para dar de alta el curso online:</h2>
+        <h2 class="frase">Estas editando el curso <%= productToEdit.course_title %></h2>
 
-            <form action="/products" method="POST" enctype="multipart/form-data">
+            <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">   
                 <div class="main-forms-container">
                     <div class="form-box">    
-                        <input type="text" name="course_title" autocomplete="off" 
-                        placeholder="Titulo del curso" class="form-format">
+                        <input type="text" name="name" autocomplete="off" 
+                        placeholder="Titulo del curso" class="form-format" value="<%= productToEdit.course_title %>">
                     </div>
                     
                     <div class="form-box">
                         <p class="body-format">Descripción resumida:</p>
-                        <input class="form-format" type="text" name="short_description"></input>
+                        <input class="form-format" type="text" name="short_description" value="<%= productToEdit.short_description %>"></input>
                     </div>
                     <div class="form-box">                
                         <label class="body-format">Elegir una foto para el Curso:</label>
-                        <input type="file" name="image" accept=".jpg" class="form-format">
+                        <input type="file" name="product-photo" accept=".jpg" class="form-format">
                     </div>
 
                     <div class="form-box">
                         <label class="body-format">Descripcion del curso:</label>
-                        <textarea class="form-format detail" rows="3" required="" name="long_description"></textarea>
+                        <textarea class="form-format detail" rows="3" name="long_description"><%= productToEdit.long_description %></textarea>
                     </div>
 
                     <div class="form-box">  
                         <p class="body-format">Categorias:</p>              
                         <select name="category" autocomplete="off" placeholder="Categoría del producto" class="form-format">
-                            <option class="form-select" value=Finanzas>Finanzas</option>
-                            <option class="form-select" value=Excel>Excel</option>
-                            <option class="form-select" value=Desarrollo>Desarrollo</option>
-                            <option class="form-select" value=Fotografia>Fotografía</option>
+                            <option class="form-select" value=Finanzas <%= productToEdit.category=='Finanzas' ? 'selected' :''%>>Finanzas</option>
+                            <option class="form-select" value=Excel <%= productToEdit.category=='Excel' ? 'selected' :''%>>Excel</option>
+                            <option class="form-select" value=Desarrollo <%= productToEdit.category=='Desarrollo' ? 'selected' :''%>>Desarrollo</option>
+                            <option class="form-select" value=Fotografia <%= productToEdit.category=='Fotografia' ? 'selected' :''%>>Fotografía</option>
                         </select>    
                     </div>
 
                     <div class="form-box">
                         <label class="body-format">Conocimientos previos</label>
-                        <textarea class="form-format detail" rows="3" required="" name="requirements"></textarea>
+                        <textarea class="form-format detail" rows="3" name="requirements"><%= productToEdit.requirements %></textarea>
                     </div> 
 
                     <div class="form-box">
                         <label class="body-format">A quien está dirigido?</label>
-                        <textarea class="form-format detail" rows="3" required="" name="who_can"></textarea>
+                        <textarea class="form-format detail" rows="3" name="who_can"><%= productToEdit.who_can %></textarea>
                     </div>        
 
                     <div class="form-box">                
                         <input type="number" name="price" autocomplete="off" 
-                        placeholder="Costo del curso" class="form-format ">
+                        placeholder="Costo del curso" class="form-format" value="<%= productToEdit.price %>">
                     </div>
 
                     <div class="form-box">                
                         <input type="number" name="discount" autocomplete="off" 
-                        placeholder="Descuento aplicado (%)" class="form-format ">
+                        placeholder="Descuento aplicado (%)" class="form-format" value="<%= productToEdit.discount %>">
                     </div>
 
                     <div class="form-box">
-                        <p class="body-format">Confirma la carga del curso</p>
+                        <p class="body-format">Confirma la edición del curso</p>
                     </div>
                 </div>
                 <div class="secondari-forms-container">
                     <div class="form-box">
-                            <button type="submit" class="buttons">Crear curso</button>
-                    </div>
-
-                    <div class="form-box">
-                        <button type="reset" class="buttons">Borrar</button>
+                            <button type="submit" class="buttons">CONFIRMAR CAMBIOS</button>
                     </div>
                 </div>    
+            </form>
+            <form class="form-box" action="/products/<%=productToEdit.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                <button type="submit" class="buttons">ELIMINAR CURSO</button>
             </form>
     </main>
 <%- include ('../partials/footer.ejs') %>

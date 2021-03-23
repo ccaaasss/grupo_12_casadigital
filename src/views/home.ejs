@@ -15,71 +15,64 @@
   <main>
     <div class="main-contenedor">
     <div class="carrousel">
-      <img src="/images/sale2.jpg" class="sale">
+      <img src="/images/products/sale2.jpg" class="sale">
     </div>
     <div class="main-categorias">
-    <div class="category">
-      <img src="/images/desarrollo.jpg" alt="">
-    </div>
-    <div class="category">
-      <img src="/images/fotografia.jpg" alt="">
-    </div>
-    <div class="category">
-      <img src="/images/finanzas.jpg" alt="">
-    </div>
-    <div class="category">
-      <img src="/images/personal.jpg" alt="">
-    </div>    
+      <div class="category">
+        <a href="/products/Desarrollo"><img src="/images/products/desarrollo.jpg" alt=""></a>        
+      </div>
+      <div class="category">
+        <a href="/products/Fotografia"><img src="/images/products/fotografia.jpg" alt=""></a>        
+      </div>
+      <div class="category">
+        <a href="/products/Finanzas"><img src="/images/products/finanzas.jpg" alt=""></a>        
+      </div>
+      <div class="category">
+        <a href="/products/Personal"><img src="/images/products/personal.jpg" alt=""></a>        
+      </div>    
     </div>
     <div class="div-separadores">
       <p class="separadores">NOVEDADES EN LA CASA DIGITAL</p>
     </div>
     <div class="main-categorias">
-      <div class="category">
-        <a href="/productDetail"><img src="/images/Excel.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/Photo.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/web.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/Hacking.jpg" alt=""></a>
-      </div> 
+      <% let counter = 0 %>
+      <% for (product of products) {%>
+        <% let hoy = new Date() %>
+        <% if (parseInt((hoy - Date.parse(product.creation_date))/(24*3600*1000)) < 30 && counter < 4) { 	%>
+          <div class="category">
+            <a href="/products/<%= product.id %>/productDetail"><img src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
+          </div>
+          
+        <% counter++ } %>
+      <% } %>
     </div>
     <div class="div-separadores">
       <p class="separadores">LO MAS VENDIDO</p>
     </div>
     <div class="main-categorias">
-      <div class="category">
-        <a href="/productDetail"><img src="/images/Excel.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/Photo.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/web.jpg" alt=""></a>
-      </div>
-      <div class="category">
-        <a href="/productDetail"><img src="/images/Hacking.jpg" alt=""></a>
-      </div>  
+      <% for (product of products) {%>
+        <% if (product.top_seller) { 	%>
+          <div class="category">
+            <a href="/products/<%= product.id %>/productDetail"><img src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
+          </div>
+        <% } %>
+      <% } %>
     </div>
     <div class="div-separadores">
       <p class="separadores">COMUNIDAD</p>
     </div>
     <div class="main-categorias">
       <div class="category">
-        <a href="/productDetail"><img src="/images/Excel.jpg" alt=""></a>
+        <a href="/products/community/Javier Gómez"><img src="/images/Comunity_01.jpg" alt=""></a>
       </div>
       <div class="category">
-        <a href="/productDetail"><img src="/images/Photo.jpg" alt=""></a>
+        <a href="/products/community/Juan Gabriel Gomila Salas"><img src="/images/Comunity_02.jpg" alt=""></a>
       </div>
       <div class="category">
-        <a href="/productDetail"><img src="/images/web.jpg" alt=""></a>
+        <a href="/products/community/Fabián Schwartz"><img src="/images/Comunity_03.jpg" alt=""></a>
       </div>
       <div class="category">
-        <a href="/productDetail"><img src="/images/Hacking.jpg" alt=""></a>
+        <a href="/products/community/Diego López"><img src="/images/Comunity_04.jpg" alt=""></a>
       </div>   
     </div>
   </div>

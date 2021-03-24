@@ -142,7 +142,7 @@ background-color: black;}
 }
 .body-format{
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     text-align: left;
     padding: 15px 15px 0;
@@ -279,7 +279,7 @@ background-color: black;}
     }
     .main-forms-container{
         display: flex;
-        flex-direction: row;
+        
         justify-content: space-around;
         max-width: 500px;
     }

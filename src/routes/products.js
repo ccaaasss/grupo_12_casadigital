@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
+// Middleware que sólo permite acceder a ciertas rutas si se está loggeado:
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // Requiero el controller al que apuntan las rutas que defino maás abajo:
 const productsController = require("../controllers/productsController.js")
@@ -32,14 +34,14 @@ router.get("/:category", productsController.byCategory);
 router.get("/community/:community", productsController.byCommunity);
 
 //  Creación de productos
-router.get("/newProduct", productsController.create);
+router.get("/newProduct", authMiddleware, productsController.create);
 router.post('/', upload.single("image") , productsController.store);
 
 //  Detalle de un producto particular
 router.get("/:id/productDetail", productsController.detail);
 
 //  Edición de productos
-router.get('/:id/edit', productsController.edit); 
+router.get('/:id/edit', authMiddleware, productsController.edit); 
 router.put('/:id', upload.single("image") , productsController.update);
 
 //  Borrado de productos
@@ -47,9 +49,7 @@ router.delete('/:id', productsController.destroy);
 
 //  Aqui irán las rutas para procesar las compras.
 
-router.get("/productCart", productsController.productCart);
-
-
+router.get("/productCart", authMiddleware, productsController.productCart);
 
 
 module.exports = router;

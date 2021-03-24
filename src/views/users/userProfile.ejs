@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0faaad1c63.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="/css/userProfile.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <title>Perfil de <%= userToLogin.email %></title>
+    
+    
+</head>
+<body>
+  <%- include ('../partials/header.ejs') %>
+  <main class="main-style">
+        <h2 class="titulo">Bienvenido a tu perfil</h2>
+        
+        <% if (userToLogin != undefined) { %>
+
+            <div class="main-form-container">
+                <div class="col-izquierda">
+                    <img class="user-img" src="/images/users/<%= userToLogin.image %>" alt="Imagen del Usuario">
+                </div>
+                <div class="col-der">
+                    <div>
+                        <p>Nombre: <%= userToLogin.first_name %> <%= userToLogin.last_name %></p>
+                    </div>
+                    
+                    <div>    
+                        <p>email: <%= userToLogin.email %> </p>
+                    </div>
+                </div>
+            </div>
+            
+        
+        <% } %> 
+        
+    </main>
+  <%- include ('../partials/footer.ejs') %>
+</body>
+</html>

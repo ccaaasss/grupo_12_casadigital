@@ -143,7 +143,7 @@ body{background-color: black;}
     font-weight: 400;
     text-align: left;
     padding: 15px;
-    margin: 0 5px 5px;
+    margin: 5px 5px;
 }
 .instructions-crear {
     display: block;
@@ -183,6 +183,13 @@ body{background-color: black;}
     margin:  15px auto;
     background-color:#fce130 ;
     border-radius: 4px;
+}
+.rememberMe-container {
+    display: flex;    
+    max-width: 320px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 /* TERMINA MAIN */

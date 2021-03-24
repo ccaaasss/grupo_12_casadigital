@@ -19,25 +19,33 @@
             <div class="google-log"><a href="#" class="link"><i class="fab fa-google"></i>Entra con Google</a></div>
         </div>
         <div class="instructions-format">O entra con tu email</div>
+
+        <% if (locals.errors) { %>
+            <% for (error of errors) { %>
+              <li><%= error.msg %> </li>
+            <% } %>
+        <% } %>
                
-        <form action="/users" method="POST"> 
-                <div class="main-forms-container">    
-                    <div>
-                    <input type="email" name="email" 
-                    placeholder="Introduce tu correo electronico" class="form-format">
-                    </div>               
-                    <div>  
-                    <input type="password" name="password" 
-                    placeholder="Tu Contraseña" class="form-format">
-                    </div>
+        <form action="/users/login" method="POST">
+            <div class="main-forms-container">    
+                <div>
+                <input type="email" name="email" placeholder="Introduce tu correo electronico" class="form-format">
+                </div>               
+                <div>  
+                <input type="password" name="password" placeholder="Tu Contraseña" class="form-format">
                 </div>
-        <div class="instructions-format"><a href="#" class="link">¿Olvidaste tu contraseña?</a></div>
+            </div>
+            <div class="instructions-format"><a href="#" class="link">¿Olvidaste tu contraseña?</a></div>
             <div>
                 <button type="submit" class="entry-button">Entra</button>
             </div>
-            </form>
-        <div class="instructions-crear">¿No tienes cuenta? <a href="/users/register" class="link">Crear cuenta</a></div>
-        </main>
+            <div class="rememberMe-container">
+                <label for="rememberMe" class="instructions-format">Recordame</label>
+                <input type="checkbox" name="rememberMe">
+            </div>
+        </form>
+        <div class="instructions-crear">¿No tienes cuenta? <a href="/users/register" class="link">Crear cuenta</a></div>        
+    </main>
   <%- include ('../partials/footer.ejs') %>
 </body>
 </html>

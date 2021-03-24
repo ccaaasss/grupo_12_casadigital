@@ -3,7 +3,7 @@ const { fileLoader } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const { use } = require('../routes/users');
+const { validationResult } = require('express-validator');
 
 
 // Lectura de la DB json a formato array de objetos
@@ -14,9 +14,6 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const usersController ={
-    // index: (req, res)=>{ res.render ('./users/')},
-
-    login: (req, res)=>{ res.render ('./users/login')},
 
     register: (req, res)=>{ res.render ('./users/register')}, 
     // Crea - Method To create
@@ -37,27 +34,47 @@ const usersController ={
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             birth_date: req.body.birth_date,
-            image: image
-    
-            
+            image: image  
         };
         users.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify( users, null, ' '));
-        res.redirect('/users/register');
+        res.redirect('/users/login');
     },
-    loginProcess: (req, res) => {
-        let userToLogin = users.find( user => user.email == req.params.email );
-        console.log(userToLogin);
-        if(userToLogin != undefined && bcryptjs.compareSync(req.body.password, userToLogin.password )) {            
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                res.render("./users/profile", {userToLogin: userToLogin})
-            } else {
-                res.redirect("./users/login")
 
+    login: (req, res)=>{ res.render ('./users/login')},
+
+    loginProcess: (req, res) => {
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            
+            for(user of users){
+                if(user.email == req.body.email){
+
+                    if (bcrypt.compareSync(req.body.password, user.password)) {
+                        userToLogin = user;
+                        break;
+                    }
+                }
+            }
+            if (userToLogin == undefined){
+                return res.render ('./users/login', {errors:[
+                    {msg: "Credenciales inválidas"}
+                ]});
+            }
+            req.session.userLogged = userToLogin;
+            if (req.body.rememberMe != undefined){
+                res.cookie("rememberMe", userToLogin.email, {maxAge: 120000})
             }
 
+
+            res.render ('./users/userProfile', userToLogin)
+            
+            
+
+        } else{
+            return res.render ('./users/login', {errors:errors.errors});
         }
+    }  
 }
 
 

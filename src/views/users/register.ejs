@@ -15,17 +15,14 @@
 </head>
 <body>
   <%- include ('../partials/header.ejs') %>
- <main class="main-style">       
-    <h2 class="fantasy-frase">Aprende con los mejores prefesionales y forma parte de la mayor comunidad para creativos</h2>
-    <div class="diferent-logins">
-      <div class="facebook-inic"><a href="#" class="link"><i class="fab fa-facebook"></i>Registrarte con Facebook </a></div>
-      <div class="google-log"><a href="#" class="link"><i class="fab fa-google"></i>Registrarte con Google</a></div>
-  </div>
-    <div class="body-format">o registrate con tu email</div>
-    
-    
-    
-    <form action="/users" method="POST" enctype="multipart/form-data">
+    <main class="main-style">
+        <h2 class="fantasy-frase">Aprende con los mejores prefesionales y forma parte de la mayor comunidad para creativos</h2>
+        <div class="diferent-logins">
+            <div class="facebook-inic"><a href="#" class="link"><i class="fab fa-facebook"></i>Registrarte con Facebook </a></div>
+            <div class="google-log"><a href="#" class="link"><i class="fab fa-google"></i>Registrarte con Google</a></div>
+        </div>
+        <p class="body-format">O registrate con tu email</p>
+        <form action="/users" method="POST" enctype="multipart/form-data">
             <div class="main-forms-container">
                 <div>    
                     <input type="text" name="first_name" placeholder="Completa tu nombre" class="form-format">
@@ -36,31 +33,26 @@
                 </div>
 
                 <div>    
-                <input type="email" name="email" placeholder="Correo de tu nueva cuenta" class="form-format">
+                    <input type="email" name="email" placeholder="Completa tu email" class="form-format">
                 </div>
 
                 <div>                
-                <input type="password" name="password" placeholder="Tu Contraseña" class="form-format">
+                    <input type="password" name="password" placeholder="Tu Contraseña" class="form-format">
                 </div> 
-            
             </div>
-                <p class="body-format">¿Cuando es tu cumpleaños?</p>
-                
-                <div class="secondari-forms-container">
-                    <input type="date" name="birth_date">
-                </div>
-
-
+            <p class="body-format">¿Cuando es tu cumpleaños?</p>
+            <div class="secondari-forms-container">
+                <input type="date" name="birth_date" class="form-format">
+            </div>                
             <p class="body-format">*Tu fecha de nacimiento te dara una mejor experciencia en Casa Digital</p>
-           
-            <div class="form-box">                
-                <label class="body-format">Selecciona una foto de perfil:</label>
+            <p class="body-format">Selecciona una foto de perfil:</p>
+            <div class="secondari-forms-container">
                 <input type="file" name="image" accept=".jpg" class="form-format">
             </div>
-        <div>
-            <button type="submit" class="create-button">Crear cuenta</button>
-         </div>
-         
+            <div>
+                <button type="submit" class="create-button">Crear cuenta</button>
+            </div>
+            
         </form>
         <div class="end-frase">
         <p>¿Ya tienes cuenta? <a href="/login" class="link">Entrar</a></p>

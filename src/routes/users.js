@@ -3,7 +3,11 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
+const express_validator = require("express-validator");
 const bcrypt= require('bcrypt');
+// Middleware que sólo permite acceder a ciertas rutas si NO se está loggeado:
+const guestMiddleware = require("../middlewares/guestMiddleware");
+
 
 // Requiero el controller al que apuntan las rutas que defino maás abajo:
 const usersController = require("../controllers/usersController.js")
@@ -21,19 +25,22 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-
-// Creación de usuarios 
-router.get("/register", usersController.register);
-router.post('/', upload.single("image") , usersController.store);
-
+/* Validaciones */
+const {check} = require("express-validator");
+let validateLogin = [
+    check("email").isEmail().withMessage("Email invalido"),
+    check("password").isLength({min: 8}).withMessage("la contraseña debe tener al menos 8 caracteres")
+];
 
 // Defino las rutas, es decir que controlador y cuál de sus métodos es el que va a manejar el requerimiento
-// router.get("/", usersController.index);
+
+// Creación de usuarios 
+router.get("/register", guestMiddleware, usersController.register);
+router.post('/', upload.single("image") , usersController.store);
+
 // Proceso de formulario de Login
-router.get("/login", usersController.login);
-router.post("/", usersController.loginProcess);
 
-
-
+router.get("/login", guestMiddleware, usersController.login);
+router.post("/login", validateLogin, usersController.loginProcess);
 
 module.exports = router;

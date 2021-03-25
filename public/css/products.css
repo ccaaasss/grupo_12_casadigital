@@ -149,7 +149,6 @@ footer {
 }
 .category {
     background-color:#3b3b3b;
-    height: 100%;
     flex-grow: 2.5;
     margin: 0 10px;
     border: grey 1px solid;

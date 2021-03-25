@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="/css/userProfile.css">
     <link rel="stylesheet" href="/css/normalize.css">
     
-    <title>Perfil de <%= userToLogin.email %></title>
-    
+    <title>Perfil de <%= userToLogin.email %></title>    
     
 </head>
 <body>
@@ -27,16 +26,20 @@
                 <div class="col-der">
                     <div>
                         <p>Nombre: <%= userToLogin.first_name %> <%= userToLogin.last_name %></p>
-                    </div>
-                    
-                    <div>    
+                        <br>
                         <p>email: <%= userToLogin.email %> </p>
-                    </div>
+                    </div> 
+                    <form class="logout-form" action="/users/logout" method="POST">
+                        <button type="submit" class="buttons">Log out</button>
+                    </form>
                 </div>
             </div>
             
-        
-        <% } %> 
+        <% } else { %>        
+            <div>
+                <p>No estás loggeado</p>
+            </div>
+        <% } %>
         
     </main>
   <%- include ('../partials/footer.ejs') %>

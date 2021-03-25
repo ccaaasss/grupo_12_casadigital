@@ -42,5 +42,6 @@ router.post('/', upload.single("image") , usersController.store);
 
 router.get("/login", guestMiddleware, usersController.login);
 router.post("/login", validateLogin, usersController.loginProcess);
+router.post("/logout", usersController.logoutProcess);
 
 module.exports = router;

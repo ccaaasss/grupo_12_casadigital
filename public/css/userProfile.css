@@ -120,6 +120,17 @@ img {
     height: auto;
 }
 
+.buttons { 
+    display: block;
+    text-align: center;
+    padding: 5px 15px;
+    margin: 10px auto;
+    font-size: 16px;
+    font-weight: 400;        
+    background-color:#fce130 ;
+    border-radius: 5px;
+}
+
 /* Footer */
 .main-footer {
     display: flex;

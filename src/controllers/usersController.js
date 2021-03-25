@@ -74,6 +74,13 @@ const usersController ={
         } else{
             return res.render ('./users/login', {errors:errors.errors});
         }
+    },
+
+    logoutProcess: (req, res) => {
+        
+        req.session.userLogged = undefined;
+        res.cookie("rememberMe", "", {maxAge: -1});
+        res.redirect ('/');
     }  
 }
 

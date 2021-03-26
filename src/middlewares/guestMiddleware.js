@@ -1,9 +1,11 @@
+// Verifica si hay un usuario loggeado y si lo hay redirecciona al perfil de ese usuario loggeado.
+// Se usa en rutas que sólo pueden accederse si No se está loggeado.
+
 function guestMiddleware (req, res, next){
     if(req.session.userLogged == undefined){
         next();
     } else{
-        let userToLogin = req.session.userLogged;
-        res.render ('./users/userProfile', userToLogin)
+        // res.redirect("./users/userProfile")
     };
 
 };

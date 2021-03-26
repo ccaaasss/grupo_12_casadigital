@@ -16,10 +16,22 @@
             <li><a href="#" class="text-nav-1"> Buscar</a></li>
           </ul>
         </div>
-        <div class="login">
-          <a href="/users/login"><p class="login-parrafo">Login</p></a>
-          <i class="fas fa-user-graduate"></i>
-        </div>
+        <% if (locals.userLogged != undefined) { %>
+          <div class="login">            
+            <form class="logout-form" action="/users/logout" method="POST">
+              <button type="submit" class="buttons">Logout</button>
+            </form>
+            <a class="login" href="/users/userProfile">
+            <p class="login-parrafo">Hola <b><%= locals.userLogged.first_name %></b></p>
+            <img class="user-thumb" src="/images/users/<%= locals.userLogged.image %>" alt="Imagen del Usuario">
+            </a>
+          </div>
+        <% } else { %>
+          <div class="login">
+            <a href="/users/login"><p class="login-parrafo">Login</p></a>
+            <i class="fas fa-user-graduate"></i>
+          </div>
+        <% } %>
       </nav>
     </div>
   </header>

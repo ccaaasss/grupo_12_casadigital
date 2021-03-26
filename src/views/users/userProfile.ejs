@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/0faaad1c63.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="/css/userProfile.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-    <title>Perfil de <%= userToLogin.email %></title>    
-    
-</head>
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Casa Digital', stylesheet: "/css/userProfile.css"}) %>
 <body>
-  <%- include ('../partials/header.ejs') %>
+<!-- Include Header -->
+<%- include ('../partials/header.ejs') %>
   <main class="main-style">
         <h2 class="titulo">Bienvenido a tu perfil</h2>
         
-        <% if (userToLogin != undefined) { %>
+        <% if (locals.userLogged != undefined) { %>
 
             <div class="main-form-container">
                 <div class="col-izquierda">
-                    <img class="user-img" src="/images/users/<%= userToLogin.image %>" alt="Imagen del Usuario">
+                    <img class="user-img" src="/images/users/<%= locals.userLogged.image %>" alt="Imagen del Usuario">
                 </div>
                 <div class="col-der">
                     <div>
-                        <p>Nombre: <%= userToLogin.first_name %> <%= userToLogin.last_name %></p>
+                        <p>Nombre: <%= locals.userLogged.first_name %> <%= locals.userLogged.last_name %></p>
                         <br>
-                        <p>email: <%= userToLogin.email %> </p>
+                        <p>email: <%= locals.userLogged.email %> </p>
                     </div> 
                     <form class="logout-form" action="/users/logout" method="POST">
-                        <button type="submit" class="buttons">Log out</button>
+                        <button type="submit" class="lo-button">Log out</button>
                     </form>
                 </div>
             </div>
@@ -42,6 +33,7 @@
         <% } %>
         
     </main>
+  <!-- Include Footer -->  
   <%- include ('../partials/footer.ejs') %>
 </body>
 </html>

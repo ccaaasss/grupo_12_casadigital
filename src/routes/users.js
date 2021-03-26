@@ -38,6 +38,9 @@ let validateLogin = [
 router.get("/register", guestMiddleware, usersController.register);
 router.post('/', upload.single("image") , usersController.store);
 
+// Perfil de usuarios
+router.get("/userProfile", usersController.userProfile);
+
 // Proceso de formulario de Login
 
 router.get("/login", guestMiddleware, usersController.login);

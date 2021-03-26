@@ -65,24 +65,28 @@ const usersController ={
             if (req.body.rememberMe != undefined){
                 res.cookie("rememberMe", userToLogin.email, {maxAge: 120000})
             }
-
-
-            res.render ('./users/userProfile', userToLogin)
-            
-            
-
+            res.redirect("/");             
         } else{
             return res.render ('./users/login', {errors:errors.errors});
         }
     },
 
-    logoutProcess: (req, res) => {
-        
-        req.session.userLogged = undefined;
+    logoutProcess: (req, res) => {        
+        req.session.destroy();
         res.cookie("rememberMe", "", {maxAge: -1});
         res.redirect ('/');
-    }  
+    },
+
+    userProfile: (req, res) => {
+        res.render ('./users/userProfile');
+
+        // if(req.session.userLogged != undefined){
+        //     loggedUser = req.session.userLogged;
+        //     return res.render ('./users/userProfile', loggedUser);
+
+        // }
+    }
 }
 
 
-module.exports = usersController ;
+module.exports = usersController;

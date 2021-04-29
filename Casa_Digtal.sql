@@ -72,6 +72,8 @@ CREATE TABLE IF NOT EXISTS `casa_digital_db`.`courses` (
   `audio_id` INT(11) NOT NULL,
   `currency_id` INT(11) NOT NULL,
   `course_owner` VARCHAR(100) NOT NULL,
+  `image` VARCHAR(50) NULL,
+  `video` VARCHAR(50) NULL,
   PRIMARY KEY (`id`),
   INDEX `category_id_idx` (`category_id` ASC),
   INDEX `audio_id_idx` (`audio_id` ASC),

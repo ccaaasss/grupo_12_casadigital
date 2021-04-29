@@ -58,6 +58,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
+        Image: {
+            type: dataTypes.STRING(50),
+            allowNull: true
+        },
+        video: {
+            type: dataTypes.STRING(50),
+            allowNull: true
+        },
     };
     let config = {
         tableName: 'courses',

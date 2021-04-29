@@ -48,3 +48,18 @@ Realizada la retro del Sprint#4 el Viernes 12/03/2021.
 	
 5. Dejar de hacer
 	Dejar tiempo ocioso entre el inicio de Sprint y empezar a trabajar
+
+Sprint #05 
+==========
+Realizada la retro del Sprint#4 el Miércoles 14/04/2021.
+1. Comenzar a hacer
+	Coordinar mejor los trabajos de cada uno sabiendo que pueden estar encadenados. 
+2. Hacer más
+	Respetar más los tiempos de los compañeros cuando coordinamos compromisos.
+3. Contiuar haciendo
+	Comenzar con la organizacion de inmediato apenas se lanza el sprint.
+	Ser cumplidores con las entregas y trabajar coordinadamente
+4. Hacer menos
+	
+5. Dejar de hacer
+	

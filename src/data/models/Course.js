@@ -38,7 +38,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(300),
             allowNull: false
         },
-        top_sellers: {
+        top_seller: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
@@ -54,11 +54,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        courrency_id: {
+        currency_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        Image: {
+        image: {
             type: dataTypes.STRING(50),
             allowNull: true
         },
@@ -86,7 +86,7 @@ module.exports = (sequelize, dataTypes) => {
             as: 'currency',
             foreignKey: 'currency_id',
         })
-        Movie.belongsToMany(models.Subtitle, {
+        Course.belongsToMany(models.Subtitle, {
             as: 'subtitles',
             through: 'course_subtitle',
             foreignKey:'id_course',

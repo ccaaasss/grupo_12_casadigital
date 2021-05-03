@@ -17,13 +17,14 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Subtitle = sequelize.define(alias, cols, config); 
 
-    Movie.belongsToMany(models.Course, {
+    Subtitle.associate = function (models) {
+    Subtitle.belongsToMany(models.Course, {
         as: 'courses',
         through: 'course_subtitle',
         foreignKey:'id_subtitle',
         otherKey:'is_course',
         timestamps: false,
     })
-
+    }
     return Subtitle
 };

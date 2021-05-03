@@ -183,7 +183,7 @@
  },
  {
   "id": 6,
-  "creation_date": "03/07/2021",
+  "creation_date": "04/24/2021",
   "course_title": "Macros y VBA: Programa, automatiza y amplía Microsoft Excel.",
   "short_description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
   "course_owner": "Diego López",
@@ -225,7 +225,7 @@
  },
  {
   "id": 7,
-  "creation_date": "03/09/2020",
+  "creation_date": "05/01/2021",
   "course_title": "Inteligencia Financiera: Guía completa Finanzas Personales",
   "short_description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
   "course_owner": "Juan Gabriel Gomila Salas",
@@ -309,7 +309,7 @@
  },
  {
   "id": 9,
-  "creation_date": "03/05/2021",
+  "creation_date": "05/01/2021",
   "course_title": "React JS - Curso de introducción desde cero y primeros pasos",
   "short_description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
   "course_owner": "Juan Gabriel Gomila Salas",
@@ -343,7 +343,7 @@
  },
  {
   "id": 10,
-  "creation_date": "03/05/2021",
+  "creation_date": "05/01/2021",
   "course_title": "Introduction to FHIR",
   "short_description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
   "course_owner": "Juan Gabriel Gomila Salas",

@@ -90,7 +90,7 @@ module.exports = (sequelize, dataTypes) => {
             as: 'subtitles',
             through: 'course_subtitle',
             foreignKey:'id_course',
-            otherKey:'is_subtitle',
+            otherKey:'id_subtitle',
             timestamps: false,
         })
     }

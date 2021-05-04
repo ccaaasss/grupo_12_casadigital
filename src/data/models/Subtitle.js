@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         as: 'courses',
         through: 'course_subtitle',
         foreignKey:'id_subtitle',
-        otherKey:'is_course',
+        otherKey:'id_course',
         timestamps: false,
     })
     }

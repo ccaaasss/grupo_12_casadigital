@@ -7,11 +7,12 @@
     <%- include ('../partials/header.ejs') %>
 
     <main class="main-style">       
-        <h2 class="frase">Estas editando el curso <%= productToEdit.course_title %></h2>
+        <h2 class="frase">Estas editando el curso: <%= productToEdit.course_title %></h2>
 
             <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">   
                 <div class="main-forms-container">
-                    <div class="form-box">    
+                    <div class="form-box">
+                        <label class="body-format">Titulo del curso</label>    
                         <input type="text" name="name" autocomplete="off" 
                         placeholder="Titulo del curso" class="form-format" value="<%= productToEdit.course_title %>">
                     </div>
@@ -33,10 +34,9 @@
                     <div class="form-box">  
                         <p class="body-format">Categorias:</p>              
                         <select name="category" autocomplete="off" placeholder="Categoría del producto" class="form-format">
-                            <option class="form-select" value=Finanzas <%= productToEdit.category=='Finanzas' ? 'selected' :''%>>Finanzas</option>
-                            <option class="form-select" value=Excel <%= productToEdit.category=='Excel' ? 'selected' :''%>>Excel</option>
-                            <option class="form-select" value=Desarrollo <%= productToEdit.category=='Desarrollo' ? 'selected' :''%>>Desarrollo</option>
-                            <option class="form-select" value=Fotografia <%= productToEdit.category=='Fotografia' ? 'selected' :''%>>Fotografía</option>
+                            <% for( category of categories ) { %>                                
+                                <option class="form-select" value=<%= category.id %> <%= productToEdit.category_id == category.id ? 'selected' :''%>><%=category.category_name%></option>
+                            <% } %>                            
                         </select>    
                     </div>
 
@@ -48,16 +48,36 @@
                     <div class="form-box">
                         <label class="body-format">A quien está dirigido?</label>
                         <textarea class="form-format detail" rows="3" name="who_can"><%= productToEdit.who_can %></textarea>
-                    </div>        
-
-                    <div class="form-box">                
+                    </div>
+                    <div class="form-box">  
+                        <p class="body-format">Idioma del audio:</p>              
+                        <select name="audio_id" autocomplete="off" placeholder="Idioma del audio" class="form-format">
+                            <% for( audioLang of audioLangs ) { %>                                
+                                <option class="form-select" value=<%= audioLang.id %> <%= productToEdit.audio_id == audioLang.id ? 'selected' :''%> ><%=audioLang.audioLang%></option>                                
+                            <% } %>
+                        </select>    
+                    </div>
+                    <div class="form-box">
+                        <label class="body-format">Costo del curso</label>
                         <input type="number" name="price" autocomplete="off" 
                         placeholder="Costo del curso" class="form-format" value="<%= productToEdit.price %>">
+                        <p class="body-format">Moneda:</p>              
+                        <select name="currency_id" autocomplete="off" placeholder="Moneda" class="form-format">
+                            <% for( currency of currencies ) { %>                                
+                                <option class="form-select" value=<%= currency.id %> <%= productToEdit.currency_id == currency.id ? 'selected' :''%>  ><%=currency.currency%></option>                                
+                            <% } %>
+                        </select>
                     </div>
 
-                    <div class="form-box">                
+                    <div class="form-box">
+                        <label class="body-format">Descuento aplicado (%)</label>
                         <input type="number" name="discount" autocomplete="off" 
                         placeholder="Descuento aplicado (%)" class="form-format" value="<%= productToEdit.discount %>">
+                    </div>
+                    <div class="form-box">
+                        <label class="body-format">Docente del curso</label>
+                        <input type="text" name="course_owner" autocomplete="off" 
+                        placeholder="Docente del curso" class="form-format" value="<%= productToEdit.course_owner %>">
                     </div>
 
                     <div class="form-box">

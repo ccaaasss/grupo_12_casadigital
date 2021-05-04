@@ -9,11 +9,11 @@
     <div class="main-contenedor">
       <% for (category of categories) {%>
         <div class="div-separadores">
-          <p class="separadores"><%= category %></p>
+          <p class="separadores"><%= category.category_name %></p>
         </div>
         <div class="product-box">
           <% for (product of products) {%>
-            <% if (product.category == category) { 	%>
+            <% if (product.category_id == category.id) { 	%>
               <div class="main-categorias">
                 <div class="category">
                   <a href="/products/<%= product.id %>/productDetail/"><img src="/images/products/<%= product.image %>" alt="imagen de producto"></a>

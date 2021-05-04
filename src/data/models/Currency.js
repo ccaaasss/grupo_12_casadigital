@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        courrency: {
+        currency: {
             type: dataTypes.STRING(3),
             allowNull: false
         },

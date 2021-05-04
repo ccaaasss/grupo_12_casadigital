@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-der">
                     <section class="header-curso">
-                        <% if (product.top_seller) { 	%> 
+                        <% if (product.top_seller == 1) { 	%> 
                         <span class="top-seller">TOP VENTAS</span>
                         <% } %>
                         <h1 class="main-title"><%= product.course_title %></h1>
@@ -34,7 +34,7 @@
                                     </li>
                                      -->
                                     <li><i class="fas fa-volume-up"></i>
-                                        Audio: <%= product.audio %> 
+                                        Audio: <%= product.audio.audioLang %> 
                                     </li>
                                     <li>
                                         <i class="far fa-smile"></i>
@@ -57,7 +57,7 @@
                                     </li> -->
                                     <li>
                                         <i class="far fa-closed-captioning"></i>
-                                        <%= product.subtitles %>
+                                        <%= product.subtitles.ccLang %>
                                     </li>
                                     <li>
                                         <i class="fas fa-infinity"></i>
@@ -163,16 +163,16 @@
                             <div class="price-badges">
                                 <span class="badge"> REBAJAS </span>
                                 <span class="price-discount"> <%= product.discount %>  % Dto. </span>
-                                <span class="price-code"> <%= product.currency %> </span>
+                                <span class="price-code"> <%= product.currency.currency %> </span>
                                 <span class="discounted-price"> <%= product.price %></span>
                             </div>
                             <div class="item-price">
-                                <span class="price-code"> <%= product.currency %> </span>
+                                <span class="price-code"> <%= product.currency.currency %> </span>
                                 <span class="price"> <%= toThousand(finalPrice.toFixed(0)) %></span>
                             </div>
                         <% } else {  %>
                             <div class="item-price">
-                                <span class="price-code"> <%= product.currency %> </span>
+                                <span class="price-code"> <%= product.currency.currency %> </span>
                                 <span class="price"> <%= toThousand(finalPrice.toFixed(0)) %></span>
                             </div>
                         <% } %>   

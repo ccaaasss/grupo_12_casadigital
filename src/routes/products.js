@@ -24,6 +24,10 @@ const upload = multer({storage: storage});
 
 //  Defino las rutas, es decir que controlador y cuál de sus métodos es el que va a manejar el requerimiento
 
+//  Creación de productos
+router.get("/newProduct", authMiddleware, productsController.create);
+router.post('/', upload.single("image") , productsController.store);
+
 //  Listado de productos:
 router.get("/", productsController.index);
 
@@ -32,10 +36,6 @@ router.get("/:category", productsController.byCategory);
 
 //  Listado de productos de por docente (Comunidad):
 router.get("/community/:community", productsController.byCommunity);
-
-//  Creación de productos
-router.get("/newProduct", authMiddleware, productsController.create);
-router.post('/', upload.single("image") , productsController.store);
 
 //  Detalle de un producto particular
 router.get("/:id/productDetail", productsController.detail);

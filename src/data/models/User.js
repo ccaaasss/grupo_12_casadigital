@@ -6,10 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        id_roles: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
         first_name: {
             type: dataTypes.STRING(50),
             allowNull: false
@@ -36,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         role_id: {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
     };
     let config = {

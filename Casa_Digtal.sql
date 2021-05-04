@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `casa_digital_db`.`users` (
   `password` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `image` VARCHAR(50) NOT NULL,
-  `role_id` INT(11) NOT NULL,
+  `role_id` INT(11) NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `role_id_idx` (`role_id` ASC),
   CONSTRAINT `role_id`

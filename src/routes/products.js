@@ -34,7 +34,7 @@ router.get("/:category", productsController.byCategory);
 router.get("/community/:community", productsController.byCommunity);
 
 //  Creación de productos
-router.get("/newProduct", authMiddleware, productsController.create);
+router.get('/newProduct', authMiddleware, productsController.create);
 router.post('/', upload.single("image") , productsController.store);
 
 //  Detalle de un producto particular

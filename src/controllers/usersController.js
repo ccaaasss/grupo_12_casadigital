@@ -4,11 +4,14 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
+const db = require('../data/models');
+const sequelize = db.sequelize;
 
 
 // Lectura de la DB json a formato array de objetos
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+// const usersFilePath = path.join(__dirname, '../data/users.json');
+// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const users = db.User;
 
 
 
@@ -27,29 +30,30 @@ const usersController ={
         }
         
         let ids = users.map(p=>p.id)
-        let newUser = {
-            id: Math.max(...ids)+1,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            birth_date: req.body.birth_date,
-            image: image  
-        };
-        users.push(newUser);
-        fs.writeFileSync(usersFilePath, JSON.stringify( users, null, ' '));
-        res.redirect('/users/login');
+            db.User.create ({
+                id: Math.max(...ids)+1,
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                birth_date: req.body.birth_date,
+                image: image  
+                })
+            .then(users =>{
+                res.redirect('./users/login');
+        })
     },
 
     login: (req, res)=>{ res.render ('./users/login')},
 
     loginProcess: (req, res) => {
         let errors = validationResult(req);
+        let userToLogin = undefined;
         if(errors.isEmpty()){
-            
+            users.findAll()
+            .then(users => {
             for(user of users){
                 if(user.email == req.body.email){
-
                     if (bcrypt.compareSync(req.body.password, user.password)) {
                         userToLogin = user;
                         break;
@@ -65,7 +69,8 @@ const usersController ={
             if (req.body.rememberMe != undefined){
                 res.cookie("rememberMe", userToLogin.email, {maxAge: 120000})
             }
-            res.redirect("/");             
+            res.redirect("/"); 
+        })            
         } else{
             return res.render ('./users/login', {errors:errors.errors});
         }

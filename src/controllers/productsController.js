@@ -40,7 +40,7 @@ const productsController ={
 
 
 // Envia al form to create
-    create: (req,res) =>{res.render ('./products/newProduct')},
+    create: (req,res) =>{res.render ("./products/newProduct")},
 
 // Crea - Method To create
     store: (req,res) =>{

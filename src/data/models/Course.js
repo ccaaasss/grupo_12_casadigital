@@ -40,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         top_seller: {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         course_owner: {
             type: dataTypes.STRING(100),

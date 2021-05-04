@@ -32,7 +32,7 @@
 
                     <div class="form-box">  
                         <p class="body-format">Categorias:</p>              
-                        <select name="category" autocomplete="off" placeholder="Categoría del producto" class="form-format">
+                        <select name="category_id" autocomplete="off" placeholder="Categoría del producto" class="form-format">
                             <% for( category of categories ) { %>                                
                                 <option class="form-select" value=<%= category.id %>><%=category.category_name%></option>                                
                             <% } %>
@@ -54,9 +54,8 @@
                             <% for( audioLang of audioLangs ) { %>                                
                                 <option class="form-select" value=<%= audioLang.id %>><%=audioLang.audioLang%></option>                                
                             <% } %>
-                        </select>    
-                    </div>
-
+                        </select>
+                    </div>   
                     <div class="form-box">                
                         <input type="number" name="price" autocomplete="off" 
                         placeholder="Costo del curso" class="form-format ">

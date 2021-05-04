@@ -57,7 +57,9 @@
                                     </li> -->
                                     <li>
                                         <i class="far fa-closed-captioning"></i>
-                                        <%= product.subtitles.ccLang %>
+                                        <% for (let i = 0; i < product.subtitles.length; i++) { %>
+                                            <%= product.subtitles[i].ccLang %>
+                                            <% } %>
                                     </li>
                                     <li>
                                         <i class="fas fa-infinity"></i>

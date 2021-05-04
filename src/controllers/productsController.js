@@ -81,30 +81,16 @@ const productsController ={
 		} else {
 			image = 'default-image.jpg'
 		}
-		/* 	
-		let ids = products.map(p=>p.id)
-		let newProduct = {
-			id: Math.max(...ids)+1,
+
+			db.Course.create ({
 			...req.body,
 			image: image,
             creation_date: new Date(),
-            currency: 'ARS',
-            audio: "Ingles",
-            subtitles: "Español",
-            course_owner: "Profesor Ejemplo"
-		};
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		*/
-		db.Course.create({
-			...req.body,
-			image: image,
-            creation_date: new Date(),
-		})
-		.then(() => {
-            res.redirect("/products");
-        })
-    },
+			})
+			.then(products =>{
+                res.redirect ('./products')
+			})
+		},
 
     detail: async (req,res) =>{
         /* let product = products.find( product => product.id == req.params.id ); */

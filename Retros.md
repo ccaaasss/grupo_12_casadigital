@@ -62,4 +62,4 @@ Realizada la retro del Sprint#4 el Miércoles 14/04/2021.
 4. Hacer menos
 	
 5. Dejar de hacer
-	
+	Subestimar las dailies, en este sprint no hicimos

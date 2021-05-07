@@ -56,9 +56,14 @@
                             <% } %>
                         </select>
                     </div>   
-                    <div class="form-box">                
+                    <div class="form-box">  
+                        <p class="body-format">Precio:</p>                
                         <input type="number" name="price" autocomplete="off" 
                         placeholder="Costo del curso" class="form-format ">
+                    <div class="form-box">                
+                        <input type="number" name="discount" autocomplete="off" 
+                        placeholder="Descuento aplicado (%)" class="form-format ">
+                    </div>
                         <p class="body-format">Moneda:</p>              
                         <select name="currency_id" autocomplete="off" placeholder="Moneda" class="form-format">
                             <% for( currency of currencies ) { %>                                
@@ -67,18 +72,15 @@
                         </select>
                     </div>
 
-                    <div class="form-box">                
-                        <input type="number" name="discount" autocomplete="off" 
-                        placeholder="Descuento aplicado (%)" class="form-format ">
-                    </div>
 
+                    <p class="body-format">Profesor:</p> 
                     <div class="form-box">    
                         <input type="text" name="course_owner" autocomplete="off" 
                         placeholder="Docente del curso" class="form-format">
                     </div>
 
                     <div class="form-box">
-                        <p class="body-format">Confirma la carga del curso</p>
+                        <p class="body-format" style="color: #fce130;">Confirma la carga del curso</p>
                     </div>
                 </div>
                 <div class="secondari-forms-container">

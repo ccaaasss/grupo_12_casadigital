@@ -28,10 +28,7 @@ const usersController ={
         } else {
             image = 'default-avatar.jpg'
         }
-        
-        let ids = users.map(p=>p.id)
             db.User.create ({
-                id: Math.max(...ids)+1,
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 email: req.body.email,
@@ -39,8 +36,9 @@ const usersController ={
                 birth_date: req.body.birth_date,
                 image: image  
                 })
-            .then(users =>{
-                res.redirect('./users/login');
+            .then(user =>{
+                req.session.userLogged = user;
+                res.redirect('./users/userProfile');
         })
     },
 

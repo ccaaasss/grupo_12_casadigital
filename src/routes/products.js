@@ -24,6 +24,10 @@ const upload = multer({storage: storage});
 
 //  Defino las rutas, es decir que controlador y cuál de sus métodos es el que va a manejar el requerimiento
 
+// Listado de productos para admin
+
+router.get("/productList", authMiddleware, productsController.productList);
+
 //  Creación de productos
 router.get("/newProduct", authMiddleware, productsController.create);
 router.post('/', upload.single("image") , productsController.store);

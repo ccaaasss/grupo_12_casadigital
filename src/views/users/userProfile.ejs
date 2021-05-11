@@ -19,6 +19,11 @@
                         <p>Nombre: <%= locals.userLogged.first_name %> <%= locals.userLogged.last_name %></p>
                         <br>
                         <p>email: <%= locals.userLogged.email %> </p>
+                        <br>
+                        <% if (locals.userLogged.role_id == 2) {%> 
+                        <input type="password" name="" id="secreto" placeholder="Ingrese palabra secreta">
+                        <% } %> 
+                        <a href="/products/productList"><button type="submit" class="lo-button2" id="boton">Listado Peliculas</button></a>
                     </div> 
                     <form class="logout-form" action="/users/logout" method="POST">
                         <button type="submit" class="lo-button">Log out</button>
@@ -31,7 +36,7 @@
                 <p>No estás loggeado</p>
             </div>
         <% } %>
-        
+    <script src="/js/productList.js"></script>   
     </main>
   <!-- Include Footer -->  
   <%- include ('../partials/footer.ejs') %>

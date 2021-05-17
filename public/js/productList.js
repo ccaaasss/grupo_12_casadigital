@@ -1,5 +1,6 @@
 window.onload = function(){
     let boton = document.querySelector("#boton");
+    let boton1 = document.querySelector("#boton1");
     let acceso = 0
     let input = document.querySelector("#secreto");
     input.addEventListener("keyup", function(e) {
@@ -23,6 +24,6 @@ window.onload = function(){
                 e.key == "s" ? boton.style.display= "block" : (acceso = 0);
                 break;
 
-       }console.log(acceso)
+       }console.log(acceso);
     })
 }

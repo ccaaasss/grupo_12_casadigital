@@ -22,8 +22,13 @@
                         <br>
                         <% if (locals.userLogged.role_id == 2) {%> 
                         <input type="password" name="" id="secreto" placeholder="Ingrese palabra secreta">
-                        <% } %> 
-                        <a href="/products/productList"><button type="submit" class="lo-button2" id="boton">Listado Peliculas</button></a>
+                        <% } %>
+                        <div>
+                            <a href="/products/productList" class="button-a"><button type="submit" class="lo-button2" id="boton">Listado de cursos</button></a>
+                        </div>
+                        <div>
+                            <a href="/products/newProduct" class="button-a"><button type="submit" class="lo-button3" id="boton1">Nuevo curso</button></a>
+                        </div>
                     </div> 
                     <form class="logout-form" action="/users/logout" method="POST">
                         <button type="submit" class="lo-button">Log out</button>

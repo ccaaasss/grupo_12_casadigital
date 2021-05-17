@@ -65,6 +65,19 @@ img {
     background-color:#fce130 ;
     border-radius: 5px;
 }
+.lo-button3 { 
+    display: block;
+    text-align: center;
+    padding: 5px 15px;
+    margin: 10px auto;
+    font-size: 16px;
+    font-weight: 400;        
+    background-color:#fce130 ;
+    border-radius: 5px;
+}
+.button-a {
+    text-decoration: none;
+}
 
 @media (min-width: 641px) {
    
@@ -73,7 +86,8 @@ img {
         justify-content: space-around;
         max-width: 500px;
     }
-    .form-format {height: 30px;
+    .form-format {
+        height: 30px;
         font-size: 18px;
         background-color: #e3ecfa;
         border: 2px solid #e3ecfa;

@@ -8,8 +8,9 @@
 
     <main class="main-style">       
         <h2 class="frase">Completa los datos para dar de alta el curso online:</h2>
+        <!-- <ul class="errores"></ul> -->
 
-            <form action="/products" method="POST" enctype="multipart/form-data">
+            <form  class="main-form" action="/products" method="POST" enctype="multipart/form-data">
                 <div class="main-forms-container">
                     <div class="form-box">    
                         <input type="text" name="course_title" autocomplete="off" 
@@ -22,12 +23,12 @@
                     </div>
                     <div class="form-box">                
                         <label class="body-format">Elegir una foto para el Curso:</label>
-                        <input type="file" name="image" accept=".jpg" class="form-format">
+                        <input type="file" name="image" class="form-format">
                     </div>
 
                     <div class="form-box">
                         <label class="body-format">Descripcion del curso:</label>
-                        <textarea class="form-format detail" rows="3" required="" name="long_description"></textarea>
+                        <textarea class="form-format detail" rows="3" name="long_description"></textarea>
                     </div>
 
                     <div class="form-box">  
@@ -41,12 +42,12 @@
 
                     <div class="form-box">
                         <label class="body-format">Conocimientos previos</label>
-                        <textarea class="form-format detail" rows="3" required="" name="requirements"></textarea>
+                        <textarea class="form-format detail" rows="3" name="requirements"></textarea>
                     </div> 
 
                     <div class="form-box">
                         <label class="body-format">A quien está dirigido?</label>
-                        <textarea class="form-format detail" rows="3" required="" name="who_can"></textarea>
+                        <textarea class="form-format detail" rows="3" name="who_can"></textarea>
                     </div>
                     <div class="form-box">  
                         <p class="body-format">Idioma del audio:</p>              
@@ -78,7 +79,7 @@
                         <input type="text" name="course_owner" autocomplete="off" 
                         placeholder="Docente del curso" class="form-format">
                     </div>
-
+                    <ul class="errores"></ul>
                     <div class="form-box">
                         <p class="body-format" style="color: #fce130;">Confirma la carga del curso</p>
                     </div>
@@ -96,5 +97,6 @@
     </main>
     <!-- Include Footer -->
     <%- include ('../partials/footer.ejs') %>
+    <script src="/js/validacionCurso.js"></script>
 </body>
 </html>

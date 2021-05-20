@@ -16,7 +16,7 @@ body {
 
 /* ARRANCA MAIN */
 main {
-    background-color: #242424;
+    background-color: black;
 }
 .main-container{
     background-color: #242424;
@@ -90,11 +90,14 @@ main {
 }
 .body-format2{
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     text-align: left;
-    padding: 15px;
-    margin: 5px 5px 5px;
+    padding: 15px 15px 0;
+    margin: 0 auto;
+    margin-bottom: 0;
+    color: #fce130;
+    text-align: center;
 }
 .body-format2 a{
     font-style: normal;
@@ -174,6 +177,18 @@ main {
     text-align: center;
     padding: 20px;
     margin: 0px auto 10px;
+}
+.is-invalid {
+    color: #842029;
+    background-color: #fce130;
+}
+.errores li {
+    list-style: none;
+    color:#842029;
+    background-color: #F8D7DA;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 

@@ -8,11 +8,11 @@ const { validationResultProducts } = require('express-validator');
 const db = require("../data/models");
 
 // Lectura de la DB en formato de Sequelize
-const db = require("../data/models");
+// const db = require("../data/models");
 
 // Lectura de la DB json a formato array de objetos
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const productsFilePath = path.join(__dirname, '../data/products.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 
@@ -22,7 +22,6 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const productsController ={
-<<<<<<< HEAD
 
 	create: (req, res)=>{ res.render ('./products/newProduct')}, 
 	
@@ -62,8 +61,6 @@ const productsController ={
     },
 
 
-=======
->>>>>>> 4ea771a05e76b16dd2e40e7233db053e5a8447c3
 	
 	index: async (req, res)=>{
 		let categories = await db.Category.findAll()

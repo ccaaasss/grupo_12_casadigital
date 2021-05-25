@@ -23,3 +23,10 @@ Dailys Sprint#6
 30/04 - CRUD de Usuario y Home
 03/05 - CRUD de Productos
 04-05 - Mostramos el final del Sprint
+
+Dailys Sprint#7
+17/5 - Separacion de actividades
+19/5 - Presentamos validacion User Back
+21/5 - Presentamos validacion New Product Back
+25/5 - Presentamos validacion todo Front
+27/5 - Nos juntamos para finalizar el sprint viendo la funcionalidad total

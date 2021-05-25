@@ -80,12 +80,9 @@ let validateUserStore = [
 // Creación de usuarios 
 router.get("/register", guestMiddleware, usersController.register);
 router.post('/', upload.single("image"), validateUserStore, usersController.store);
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 4ea771a05e76b16dd2e40e7233db053e5a8447c3
 
 // Perfil de usuarios
 router.get("/userProfile", usersController.userProfile);

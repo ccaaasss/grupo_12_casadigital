@@ -55,6 +55,7 @@ main {
     border-radius: 4px;
     text-align: center;
 }
+
 .google-log{
     display: flex;
     justify-content: center;
@@ -74,11 +75,21 @@ main {
     text-decoration: none;
     color: #e3ecfa;
 }
+
 .fab {
     padding-right: 10px;
 }
 /* ARRANCAN LOS FORMULARIOS */
-
+.main-forms-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    justify-content: center;
+    margin: 0 auto;
+}
+.main-forms-container div{
+    margin: auto;
+}
 .body-format{
     display: block;
     font-size: 14px;
@@ -113,16 +124,27 @@ main {
     flex-direction: column;
     max-width: 350px;
     justify-content: center;
-    margin: 0 auto;
+    margin: auto;
 }
 .main-forms-container div{
-    margin: auto;
+    display:flex;
+    flex-direction: column;
+    
 }
-.secondari-forms-container{
-    display: flex;
-    max-width: 350px;
-    margin: auto;
+p.feedback{
+    font-size: 12px;
+    font-weight: 400;
+    color: #fce130;
+    margin: 5px auto;
+    max-width: 250px;
 }
+.bdy-text{
+    font-size: 10px;
+    text-align: center;
+    margin: 5px auto;
+    max-width: 250px;
+}
+
 .form-format{
     height: 25px;
     width: 300px;
@@ -155,6 +177,8 @@ main {
     line-height: 1.466;
     color: black;
 }
+
+
 .create-button{ 
     display: block;
     text-align: center;
@@ -210,5 +234,8 @@ main {
         border: 2px solid #e3ecfa;
         margin: 15px 10px;
         text-align: left;
+    }
+    p.feedback{        
+        margin: 5px 10px;
     }
 }

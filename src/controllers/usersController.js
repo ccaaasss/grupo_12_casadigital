@@ -21,25 +21,30 @@ const usersController ={
     register: (req, res)=>{ res.render ('./users/register')}, 
     // Crea - Method To create
     store: (req,res) =>{
-        let image
-        
-        if(req.file != undefined){
-            image = req.file.filename
-        } else {
-            image = 'default-avatar.jpg'
-        }
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            let image        
+            if(req.file != undefined){
+                image = req.file.filename
+            } else {
+                image = 'default-avatar.jpg'
+            }
             db.User.create ({
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                birth_date: req.body.birth_date,
-                image: image  
-                })
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    birth_date: req.body.birth_date,
+                    image: image  
+            })
             .then(user =>{
                 req.session.userLogged = user;
                 res.redirect('./users/userProfile');
-        })
+            })
+
+        } else{
+            return res.render ('./users/register', {errors:errors.mapped(), old: req.body});
+        };        
     },
 
     login: (req, res)=>{ res.render ('./users/login')},
@@ -59,9 +64,9 @@ const usersController ={
                 }
             }
             if (userToLogin == undefined){
-                return res.render ('./users/login', {errors:[
+                return res.render ('./users/login', {errors:{ noUser:
                     {msg: "Credenciales inválidas"}
-                ]});
+                }, old: req.body});
             }
             req.session.userLogged = userToLogin;
             if (req.body.rememberMe != undefined){
@@ -70,8 +75,8 @@ const usersController ={
             res.redirect("/"); 
         })            
         } else{
-            return res.render ('./users/login', {errors:errors.errors});
-        }
+            return res.render ('./users/login', {errors:errors.mapped(), old: req.body});
+        }        
     },
 
     logoutProcess: (req, res) => {        

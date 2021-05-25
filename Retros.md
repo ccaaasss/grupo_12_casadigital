@@ -68,12 +68,12 @@ Sprint #06
 ==========
 Realizada la retro del Sprint#6 el Viernes 07/05/2021.
 1. Comenzar a hacer
-	No hay comentarios, creo que este sprint estuvo bien organizado. 
+	No hay comentarios, creemos que este sprint estuvo bien organizado. 
 2. Hacer más
 	Comprometerse más con el trabajo final del Sprint.
 3. Contiuar haciendo
-	Trabajar como  lo estamos haciendo, y ser solidarios
+	Trabajar como  lo estamos haciendo, y ser solidarios.
 4. Hacer menos
-	Si bien no igual que el sprint pasado, seguimos subestimando las dailies
+	Si bien no igual que el sprint pasado, seguimos subestimando las dailies.
 5. Dejar de hacer
-	Ser orgulloso y pedir ayuda cuando lo necesitamos
+	Ser orgulloso y pedir ayuda cuando lo necesitamos.

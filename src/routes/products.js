@@ -94,7 +94,11 @@ router.get("/productList", authMiddleware, productsController.productList);
 
 //  Creación de productos
 router.get("/newProduct", authMiddleware, productsController.create);
+<<<<<<< HEAD
 router.post('/', upload.single("image") ,validateNewProduct, productsController.store);
+=======
+router.post('/', upload.single("image") , productsController.store);
+>>>>>>> 4ea771a05e76b16dd2e40e7233db053e5a8447c3
 
 //  Listado de productos:
 router.get("/", productsController.index);

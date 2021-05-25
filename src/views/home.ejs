@@ -15,7 +15,7 @@
         <a href="/products/Desarrollo"><img src="/images/products/desarrollo.jpg" alt=""></a>        
       </div>
       <div class="category">
-        <a href="/products/Fotografia"><img src="/images/products/fotografia.jpg" alt=""></a>        
+        <a href="/products/Fotografía"><img src="/images/products/fotografia.jpg" alt=""></a>        
       </div>
       <div class="category">
         <a href="/products/Finanzas"><img src="/images/products/finanzas.jpg" alt=""></a>        
@@ -31,7 +31,7 @@
       <% let counter = 0 %>
       <% for (product of products) {%>
         <% let hoy = new Date() %>
-        <% if (parseInt((hoy - Date.parse(product.creation_date))/(24*3600*1000)) < 30 && counter < 4) { 	%>
+        <% if (parseInt((hoy - Date.parse(product.creation_date))/(24*3600*1000)) < 9999 && counter < 4) { 	%>
           <div class="category">
             <a href="/products/<%= product.id %>/productDetail"><img src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
           </div>
@@ -44,7 +44,7 @@
     </div>
     <div class="main-categorias">
       <% for (product of products) {%>
-        <% if (product.top_seller) { 	%>
+        <% if (product.top_seller == 1) { 	%>
           <div class="category">
             <a href="/products/<%= product.id %>/productDetail"><img src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
           </div>

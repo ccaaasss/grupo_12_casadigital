@@ -16,6 +16,15 @@ body {
 
 /* ARRANCA MAIN */
 
+.main-style{
+    background-color:#161d20;
+    margin: 25px auto;
+    font-size: 1.5em;
+    font-weight: 400;
+    color:#e3ecfa;    
+    max-width: 700px;
+    max-height: 700px; 
+}
 .diferent-logins{
     background-color: #242424;
     display: flex;
@@ -59,15 +68,6 @@ body {
 .fab {
     padding-right: 10px;
 }
-.main-style{
-    background-color:#161d20;
-    margin: 25px auto;
-    font-size: 1.5em;
-    font-weight: 400;
-    color:#e3ecfa;    
-    max-width: 700px;
-    max-height: 700px; 
-}
 .instructions-format{
     display: block;
     font-size: 12px;
@@ -76,14 +76,6 @@ body {
     padding: 15px;
     margin: 5px 5px;
 }
-.instructions-crear {
-    display: block;
-    font-size: 12px;
-    font-weight: 400;
-    text-align: center;
-    padding: 15px;
-    margin: 0 5px 5px;
-} 
 .main-forms-container{
     display: flex;
     flex-direction: column;
@@ -102,6 +94,24 @@ body {
     margin: 10px auto;
     text-align: left;
 }
+
+p.feedback{
+    font-size: 12px;
+    font-weight: 400;
+    color: #fce130;
+    margin: 5px auto;
+}
+
+.instructions-crear {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    padding: 15px;
+    margin: 0 5px 5px;
+} 
+
+
 .entry-button{ 
     display: block;
     text-align: center;
@@ -144,7 +154,12 @@ body {
         background-color: #e3ecfa;
         border: 2px solid #e3ecfa;
         margin: 15px 10px;
-        text-align: left;}
+        text-align: left;
+    }
+    p.feedback{
+        
+        margin: 5px 10px;
+    }
 
     .entry-button{
         margin: auto;

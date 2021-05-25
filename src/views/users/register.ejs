@@ -13,33 +13,56 @@
                 <div class="google-log"><a href="#" class="link"><i class="fab fa-google"></i>Registrarte con Google</a></div>
             </div>
             <p class="body-format">O registrate con tu email</p>
-            <form action="/users" method="POST" enctype="multipart/form-data">
+            <form action="/users" method="POST" enctype="multipart/form-data" novalidate>
                 <div class="main-forms-container">
                     <div>    
-                        <input type="text" name="first_name" placeholder="Completa tu nombre" class="form-format">
+                        <input type="text" name="first_name" placeholder="Completa tu nombre" class="form-format" value="<%= locals.old && old.first_name %>">
+                        <% if (locals.errors && errors.first_name) { %>
+                            <p class="feedback"><%= errors.first_name.msg %></p>
+                        <% } %>
                     </div>
 
                     <div>    
-                        <input type="text" name="last_name" placeholder="Completa tu apellido" class="form-format">
+                        <input type="text" name="last_name" placeholder="Completa tu apellido" class="form-format" value="<%= locals.old && old.last_name %>">
+                        <% if (locals.errors && errors.last_name) { %>
+                            <p class="feedback"><%= errors.last_name.msg %></p>
+                        <% } %>
                     </div>
 
                     <div>    
-                        <input type="email" name="email" placeholder="Completa tu email" class="form-format">
+                        <input type="email" name="email" placeholder="Completa tu email" class="form-format" value="<%= locals.old && old.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="feedback"><%= errors.email.msg %></p>
+                        <% } %>
                     </div>
 
                     <div>                
-                        <input type="password" name="password" placeholder="Tu Contraseña" class="form-format">
-                    </div> 
-                </div>
-                <p class="body-format">¿Cuando es tu cumpleaños?</p>
-                <div class="secondari-forms-container">
-                    <input type="date" name="birth_date" class="form-format">
-                </div>                
-                <p class="body-format">*Tu fecha de nacimiento te dara una mejor experciencia en Casa Digital</p>
-                <p class="body-format">Selecciona una foto de perfil:</p>
-                <div class="secondari-forms-container">
-                    <input type="file" name="image" accept=".jpg" class="form-format">
-                </div>
+                        <input type="password" name="password" placeholder="Tu Contraseña" class="form-format" value="<%= locals.old && old.password %>">
+                        <% if (locals.errors && errors.password) { %>
+                            <p class="feedback"><%= errors.password.msg %></p>
+                        <% } %>
+                    </div>
+                    
+                    <div>
+                        <p class="body-format">¿Cuándo es tu cumpleaños?</p>
+                        <p class="bdy-text">*Tu fecha de nacimiento te dara una mejor experciencia en Casa Digital</p>
+                        <input type="date" name="birth_date" class="form-format" value="<%= locals.old && old.birth_date %>">                    
+                        <% if (locals.errors && errors.birth_date) { %>
+                            <p class="feedback"><%= errors.birth_date.msg %></p>
+                        <% } %>                        
+                    </div>
+                    <div >
+                        <p class="body-format">Selecciona una foto de perfil:</p>
+                        <input type="file" name="image" accept=".jpg" class="form-format">
+                        <% if (locals.errors && errors.image) { %>
+                            <p class="feedback"><%= errors.image.msg %></p>
+                        <% } %>
+                    </div>
+                </div>              
+                
+
+                
+                
                 <div>
                     <button type="submit" class="create-button">Crear cuenta</button>
                 </div>

@@ -32,11 +32,10 @@
 
                     <div class="form-box">  
                         <p class="body-format">Categorias:</p>              
-                        <select name="category" autocomplete="off" placeholder="Categoría del producto" class="form-format">
-                            <option class="form-select" value=Finanzas>Finanzas</option>
-                            <option class="form-select" value=Excel>Excel</option>
-                            <option class="form-select" value=Desarrollo>Desarrollo</option>
-                            <option class="form-select" value=Fotografia>Fotografía</option>
+                        <select name="category_id" autocomplete="off" placeholder="Categoría del producto" class="form-format">
+                            <% for( category of categories ) { %>                                
+                                <option class="form-select" value=<%= category.id %>><%=category.category_name%></option>                                
+                            <% } %>
                         </select>    
                     </div>
 
@@ -48,20 +47,40 @@
                     <div class="form-box">
                         <label class="body-format">A quien está dirigido?</label>
                         <textarea class="form-format detail" rows="3" required="" name="who_can"></textarea>
-                    </div>        
-
-                    <div class="form-box">                
+                    </div>
+                    <div class="form-box">  
+                        <p class="body-format">Idioma del audio:</p>              
+                        <select name="audio_id" autocomplete="off" placeholder="Idioma del audio" class="form-format">
+                            <% for( audioLang of audioLangs ) { %>                                
+                                <option class="form-select" value=<%= audioLang.id %>><%=audioLang.audioLang%></option>                                
+                            <% } %>
+                        </select>
+                    </div>  
+                    <div class="form-box">  
+                        <p class="body-format">Precio:</p>                
                         <input type="number" name="price" autocomplete="off" 
                         placeholder="Costo del curso" class="form-format ">
-                    </div>
-
                     <div class="form-box">                
                         <input type="number" name="discount" autocomplete="off" 
                         placeholder="Descuento aplicado (%)" class="form-format ">
                     </div>
+                        <p class="body-format">Moneda:</p>              
+                        <select name="currency_id" autocomplete="off" placeholder="Moneda" class="form-format">
+                            <% for( currency of currencies ) { %>                                
+                                <option class="form-select" value=<%= currency.id %>><%=currency.currency%></option>                                
+                            <% } %>
+                        </select>
+                    </div>
+
+
+                    <p class="body-format">Profesor:</p> 
+                    <div class="form-box">    
+                        <input type="text" name="course_owner" autocomplete="off" 
+                        placeholder="Docente del curso" class="form-format">
+                    </div>
 
                     <div class="form-box">
-                        <p class="body-format">Confirma la carga del curso</p>
+                        <p class="body-format" style="color: #fce130;">Confirma la carga del curso</p>
                     </div>
                 </div>
                 <div class="secondari-forms-container">

@@ -41,7 +41,6 @@ main {
     height: 5%;
     margin: auto;
     padding: 10px 0;
-    flex-grow: 1;
     background-color: #242424;
 }
 .main-categorias img {
@@ -50,7 +49,6 @@ main {
 }
 .category {
     background-color:#3b3b3b;
-    flex-grow: 2.5;
     margin: 0 10px;
     border: grey 1px solid;
     border-radius: 5px;

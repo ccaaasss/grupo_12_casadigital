@@ -13,4 +13,13 @@ Dailys Sprint#4
 12/03 - Presentamos el producto final (quedan consultas a hacer a profes)
 
 Dailys Sprint#5
-16/03 - Realizamos la separacion de tareas y acalramos un poco los puntos a realizar en este Sprint
+16/03 - Realizamos la separacion de tareas y aclaramos un poco los puntos a realizar en este Sprint
+
+Dailys Sprint#6
+19/04 - Realizamos la separacion de tareas y aclaramos un poco los puntos a realizar en este Sprint
+22/04 - Primer encuentro para mostrar DER y script de carga de datos
+26/04 - Finalizacion y correccion de DER y script de datos
+28/04 - Correccion de algunos errores encontrados en el DB luego de empezar a trabajar con CRUD
+30/04 - CRUD de Usuario y Home
+03/05 - CRUD de Productos
+04-05 - Mostramos el final del Sprint

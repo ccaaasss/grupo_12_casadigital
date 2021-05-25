@@ -2,6 +2,10 @@
 const { fileLoader } = require('ejs');
 const fs = require('fs');
 const path = require('path');
+const { validationResultProducts } = require('express-validator');
+
+// Lectura de la DB en formato de Sequelize
+const db = require("../data/models");
 
 // Lectura de la DB en formato de Sequelize
 const db = require("../data/models");
@@ -18,6 +22,48 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const productsController ={
+<<<<<<< HEAD
+
+	create: (req, res)=>{ res.render ('./products/newProduct')}, 
+	
+    // Crea - Method To create
+    store: (req,res) =>{
+        let errors = validationResultProducts (req);
+        if(errors.isEmpty()){
+            let image        
+            if(req.file != undefined){
+                image = req.file.filename
+            } else {
+                image = 'default-image.jpg'
+            }
+            db.product.create ({
+                    course_title: req.body.course_title,
+                    short_description: req.body.short_description,
+                    image: image,
+                    long_description:req.body.long_description,
+                    category_id: req.body.category_id,
+					requirements: req.body.requirements,
+                    who_can: req.body.who_can,
+                    audio_id:req.body.audio_id,
+                    price: req.body.price,
+                    discount: req.body.discount,
+					currency_id:req.body.currency_id,
+					course_owner:req.body.course_owner
+                    
+            })
+            .then(products =>{
+                //req.session.userLogged = user;
+                res.redirect('./products/productDetail');
+            })
+
+        } else{
+            return res.render ('./products/newProduct', {errors:errors.mapped(), old: req.body});
+        };        
+    },
+
+
+=======
+>>>>>>> 4ea771a05e76b16dd2e40e7233db053e5a8447c3
 	
 	index: async (req, res)=>{
 		let categories = await db.Category.findAll()
@@ -142,5 +188,7 @@ const productsController ={
 	}
     
 }
+
+
 
 module.exports = productsController

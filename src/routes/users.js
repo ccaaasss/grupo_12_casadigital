@@ -5,6 +5,9 @@ const multer = require("multer");
 const path = require("path");
 const express_validator = require("express-validator");
 const bcrypt= require('bcrypt');
+
+
+
 // Middleware que sólo permite acceder a ciertas rutas si NO se está loggeado:
 const guestMiddleware = require("../middlewares/guestMiddleware");
 
@@ -77,6 +80,12 @@ let validateUserStore = [
 // Creación de usuarios 
 router.get("/register", guestMiddleware, usersController.register);
 router.post('/', upload.single("image"), validateUserStore, usersController.store);
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> 4ea771a05e76b16dd2e40e7233db053e5a8447c3
 
 // Perfil de usuarios
 router.get("/userProfile", usersController.userProfile);

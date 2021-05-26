@@ -14,8 +14,9 @@ let validateNewProduct = [
         .notEmpty().withMessage("Debes introducir una descripción más extensa").bail()
         .isLength({min: 20}).withMessage("La descripción debe contener al menos 20 caracteres"),
                 
-    check("image").custom((value, {req}) =>{
-        switch(path.extname(req.file.originalname)){
+        check("image").custom((value, {req}) =>{
+            if (req.file != undefined){
+            switch(path.extname(req.file.originalname)){
                 case ".jpg": return ".jpg";
                 break;
                 case ".jpeg": return ".jpeg";
@@ -23,8 +24,10 @@ let validateNewProduct = [
                 case ".png": return ".png";
                 break;
                 case ".gif": return ".gif";
-                break;   
+                break;
                 default: return false
+            }} else {
+                return true
             }
         }).withMessage("Solo se admiten imágenes .jpg, .jpeg, .png, .gif"),
     

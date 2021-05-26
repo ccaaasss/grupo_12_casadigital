@@ -46,14 +46,14 @@
                     <div>
                         <p class="body-format">¿Cuándo es tu cumpleaños?</p>
                         <p class="bdy-text">*Tu fecha de nacimiento te dara una mejor experciencia en Casa Digital</p>
-                        <input type="date" name="birth_date" class="form-format" value="<%= locals.old && old.birth_date %>">                    
+                        <input type="date" name="birth_date" class="form-format" value="<%= locals.old && old.birth_date %>" id="date">                    
                         <% if (locals.errors && errors.birth_date) { %>
                             <p class="feedback"><%= errors.birth_date.msg %></p>
                         <% } %>                        
                     </div>
                     <div >
                         <p class="body-format">Selecciona una foto de perfil:</p>
-                        <input type="file" name="image" accept=".jpg" class="form-format">
+                        <input type="file" name="image" accept=".jpg" class="form-format" id="image">
                         <% if (locals.errors && errors.image) { %>
                             <p class="feedback"><%= errors.image.msg %></p>
                         <% } %>

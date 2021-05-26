@@ -1,5 +1,6 @@
 const {check} = require("express-validator");
 const path = require("path");
+const { nextTick } = require("process");
 
 let validateUserStore = [
     check("first_name")
@@ -22,6 +23,7 @@ let validateUserStore = [
         .notEmpty().withMessage("Debes introducir tu fecha de nacimiento").bail(),
 
     check("image").custom((value, {req}) =>{
+        if (req.file != undefined){
         switch(path.extname(req.file.originalname)){
             case ".jpg": return ".jpg";
             break;
@@ -31,8 +33,9 @@ let validateUserStore = [
             break;
             case ".gif": return ".gif";
             break;
-
             default: return false
+        }} else {
+            return true
         }
     }).withMessage("Solo se admiten imágenes .jpg, .jpeg, .png, .gif")
 ];

@@ -202,10 +202,6 @@ p.feedback{
     padding: 20px;
     margin: 0px auto 10px;
 }
-.is-invalid {
-    color: #842029;
-    background-color: #fce130;
-}
 .errores li {
     list-style: none;
     color:#842029;

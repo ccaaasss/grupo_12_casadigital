@@ -29,7 +29,7 @@ window.onload = function(){
         if(form.price.value == ""){
             errores.push("El campo ``precio`` no puede quedar vacío"); 
         }   
-        if(form.discount.value < 0 || form.discount.value > 100){
+        if(form.discount.value == "" || form.discount.value < 0 || form.discount.value > 100){
             errores.push("El valor del descuento debe ir entre el 0% y 100%"); 
         }   
         if(form.course_owner.value == ""){

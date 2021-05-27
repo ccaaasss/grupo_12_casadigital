@@ -12,46 +12,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const productsController ={
-
-	create: (req, res)=>{ res.render ('./products/newProduct')}, 
-	
-    // Crea - Method To create
-    store: (req,res) =>{
-        let errors = validationResult (req);
-        if(errors.isEmpty()){
-            let image        
-            if(req.file != undefined){
-                image = req.file.filename
-            } else {
-                image = 'default-image.jpg'
-            }
-            db.product.create ({
-                    course_title: req.body.course_title,
-                    short_description: req.body.short_description,
-                    image: image,
-                    long_description:req.body.long_description,
-                    category_id: req.body.category_id,
-					requirements: req.body.requirements,
-                    who_can: req.body.who_can,
-                    audio_id:req.body.audio_id,
-                    price: req.body.price,
-                    discount: req.body.discount,
-					currency_id:req.body.currency_id,
-					course_owner:req.body.course_owner
-                    
-            })
-            .then(products =>{
-                //req.session.userLogged = user;
-                res.redirect('./products/productDetail');
-            })
-
-        } else{
-            return res.render ('./products/newProduct', {errors:errors.mapped(), old: req.body});
-        };        
-    },
-
-
-	
+		
 	index: async (req, res)=>{
 		let categories = await db.Category.findAll()
         let courses = await db.Course.findAll({include: ['category']})
@@ -90,23 +51,43 @@ const productsController ={
 	},
 
 // Crea - Method To create
-    store: (req,res) =>{
-		let image		
-		if(req.file != undefined){
-			image = req.file.filename
-		} else {
-			image = 'default-image.jpg'
-		}
+    store: async (req,res) =>{
+        let errors = validationResult (req);
+		let categories = await db.Category.findAll();
+		let audioLangs = await db.Audio.findAll();
+		let subtitles = await db.Subtitle.findAll();
+		let currencies = await db.Currency.findAll(); 
+        if(errors.isEmpty()){
+            let image        
+            if(req.file != undefined){
+                image = req.file.filename
+            } else {
+                image = 'default-image.jpg'
+            }
+            db.product.create ({
+                    course_title: req.body.course_title,
+                    short_description: req.body.short_description,
+                    image: image,
+                    long_description:req.body.long_description,
+                    category_id: req.body.category_id,
+					requirements: req.body.requirements,
+                    who_can: req.body.who_can,
+                    audio_id:req.body.audio_id,
+                    price: Integer.parseInt(req.body.price),
+                    discount: Integer.parseInt(req.body.discount),
+					currency_id:req.body.currency_id,
+					course_owner:req.body.course_owner
+                    
+            })
+            .then(products =>{
+                //req.session.userLogged = user;
+                res.redirect('./products/productDetail');
+            })
 
-			db.Course.create ({
-			...req.body,
-			image: image,
-            creation_date: new Date(),
-			})
-			.then(products =>{
-                res.redirect ('./products')
-			})
-		},
+        } else{
+            return res.render ('./products/newProduct', {errors:errors.mapped(), old: req.body, categories, currencies, audioLangs, subtitles});
+        };        
+    },
 
     detail: async (req,res) =>{       
 		let course = await db.Course.findByPk (req.params.id,

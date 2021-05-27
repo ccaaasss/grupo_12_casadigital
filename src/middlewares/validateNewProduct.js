@@ -36,28 +36,26 @@ let validateNewProduct = [
         .notEmpty().withMessage("Debes seleccionar una categoria").bail(),
     
     check("requirements")
-        .notEmpty().withMessage("Debes introducir un requerimiento").bail(),
+        .notEmpty().withMessage("Debes detallar los requerimietnos previos para el curso").bail(),
     
     check("who_can")
-        .notEmpty().withMessage("Debes describir a quién puede participar").bail()
+        .notEmpty().withMessage("Debes describir a quién está dirigido el curso").bail()
         .isLength({min: 20}).withMessage("Debes agregar al menos 20 caracteres"),
     
     check("audio_id")
         .notEmpty().withMessage("Debes seleccionar una categoria").bail(),
     
     check("price")
-        .isNumeric().withMessage("Debes fijar un valor").bail()
-        .notEmpty().withMessage("Debes fijar un valor").bail(),
+        .notEmpty().withMessage("Debes fijar un valor al precio").bail(),
     
     check("discount")
-        .isNumeric().withMessage("Debes fijar un valor").bail()
-        .notEmpty().withMessage("Debes fijar un valor").bail(),
+        .notEmpty().withMessage("Debes fijar un valor al descuento").bail(),
         
     check("currency_id")
         .notEmpty().withMessage("Debes seleccionar una moneda").bail(),
     
     check("course_owner")
-    .notEmpty().withMessage("Debes introducir un nombre").bail()
+    .notEmpty().withMessage("Debes introducir el nombre del profesor").bail()
     .isLength({min: 5}).withMessage("El título debe tener al menos 5 caracteres"),   
 ];
 

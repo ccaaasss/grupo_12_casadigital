@@ -64,7 +64,7 @@ const productsController ={
             } else {
                 image = 'default-image.jpg'
             }
-            db.product.create ({
+            db.Course.create ({
                     course_title: req.body.course_title,
                     short_description: req.body.short_description,
                     image: image,
@@ -73,15 +73,16 @@ const productsController ={
 					requirements: req.body.requirements,
                     who_can: req.body.who_can,
                     audio_id:req.body.audio_id,
-                    price: Integer.parseInt(req.body.price),
-                    discount: Integer.parseInt(req.body.discount),
+                    price: req.body.price,
+                    discount: req.body.discount,
 					currency_id:req.body.currency_id,
-					course_owner:req.body.course_owner
+					course_owner:req.body.course_owner,
+					creation_date: Date.now(),
                     
             })
             .then(products =>{
                 //req.session.userLogged = user;
-                res.redirect('./products/productDetail');
+                res.redirect('./products');
             })
 
         } else{

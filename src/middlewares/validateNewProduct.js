@@ -9,11 +9,11 @@ let validateNewProduct = [
 
     check("short_description")
         .notEmpty().withMessage("Debes introducir una descripción").bail()
-        .isLength({min: 20}).withMessage("La descripción debe contener al menos 20 caracteres"),
+        .isLength({min: 5}).withMessage("La descripción debe contener al menos 5 caracteres"),
     
     check("long_description")
         .notEmpty().withMessage("Debes introducir una descripción más extensa").bail()
-        .isLength({min: 20}).withMessage("La descripción debe contener al menos 20 caracteres"),
+        .isLength({min: 10}).withMessage("La descripción debe contener al menos 10 caracteres"),
                 
         check("image").custom((value, {req}) =>{
             if (req.file != undefined){
@@ -40,7 +40,7 @@ let validateNewProduct = [
     
     check("who_can")
         .notEmpty().withMessage("Debes describir a quién está dirigido el curso").bail()
-        .isLength({min: 20}).withMessage("Debes agregar al menos 20 caracteres"),
+        .isLength({min: 10}).withMessage("Debes agregar al menos 10 caracteres"),
     
     check("audio_id")
         .notEmpty().withMessage("Debes seleccionar una categoria").bail(),
@@ -55,8 +55,7 @@ let validateNewProduct = [
         .notEmpty().withMessage("Debes seleccionar una moneda").bail(),
     
     check("course_owner")
-    .notEmpty().withMessage("Debes introducir el nombre del profesor").bail()
-    .isLength({min: 5}).withMessage("El título debe tener al menos 5 caracteres"),   
+    .notEmpty().withMessage("Debes introducir el nombre del profesor").bail(),
 ];
 
 module.exports = validateNewProduct;

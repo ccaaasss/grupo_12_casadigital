@@ -28,9 +28,10 @@ window.onload = function(){
         if(date.value == ""){
             errores.push("Debe completar la fecha de cumpleaños"); 
         }
-        if(!allowedExtensions.exec(image.value)){
+        if(form.image.value != ""){
+            if(!allowedExtensions.exec(image.value)){
             errores.push("El formato de la imagen debe ser JPG/JPEG/GIF/PNG"); 
-        } 
+        }}
         if(errores.length > 0){
             e.preventDefault();
             let ulErrores = document.querySelector(".errores");

@@ -1,7 +1,8 @@
 const {check} = require("express-validator");
+const path = require("path");
+const { nextTick } = require("process");
 
 let validateNewProduct = [
-
     check("course_title")
         .notEmpty().withMessage("Debes introducir un nombre").bail()
         .isLength({min: 5}).withMessage("El título debe tener al menos 5 caracteres"),
@@ -45,9 +46,11 @@ let validateNewProduct = [
         .notEmpty().withMessage("Debes seleccionar una categoria").bail(),
     
     check("price")
+        .isNumeric().withMessage("Debes fijar un valor").bail()
         .notEmpty().withMessage("Debes fijar un valor").bail(),
     
     check("discount")
+        .isNumeric().withMessage("Debes fijar un valor").bail()
         .notEmpty().withMessage("Debes fijar un valor").bail(),
         
     check("currency_id")

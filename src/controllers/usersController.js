@@ -1,19 +1,15 @@
 //  Requires
 const { fileLoader } = require('ejs');
-const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
+
+// Lectura de la DB en formato de Sequelize
 const db = require('../data/models');
 const sequelize = db.sequelize;
 
-
-// Lectura de la DB json a formato array de objetos
-// const usersFilePath = path.join(__dirname, '../data/users.json');
-// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+// Creo la variable para no llamar en las function a db
 const users = db.User;
-
-
 
 // Defino en cada método del controlador cuál será la respuesta a cada requerimiento
 const usersController ={

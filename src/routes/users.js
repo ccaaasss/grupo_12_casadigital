@@ -9,8 +9,8 @@ const bcrypt = require('bcrypt');
 const guestMiddleware = require("../middlewares/guestMiddleware");
 
 //Middlewares para validacion de formularios del Backend:
-const validateUserStore = require ("../middlewares/userRegistration");
-const validateUserLogin = require ("../middlewares/userLogin");
+const validateUserStore = require ("../middlewares/validateUserStore");
+const validateUserLogin = require ("../middlewares/validateUserLogin");
 
 
 // Requiero el controller al que apuntan las rutas que defino maás abajo:

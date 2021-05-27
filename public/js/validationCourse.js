@@ -14,9 +14,10 @@ window.onload = function(){
         if(form.short_description.value.length > 300){
             errores.push("El campo ``descripción resumida`` no puede superar los 300 caracteres"); 
         } 
-        if(!allowedExtensions.exec(form.image.value)){
+        if(form.image.value != ""){
+            if(!allowedExtensions.exec(form.image.value)){
             errores.push("El formato de la imagen debe ser JPG/JPEG/GIF/PNG"); 
-        } 
+        }}
         if(form.long_description.value == ""){
             errores.push("El campo  ``descripción`` no puede estar vacío"); 
         }   

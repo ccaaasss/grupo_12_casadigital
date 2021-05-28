@@ -68,7 +68,7 @@ const usersController ={
             if (req.body.rememberMe != undefined){
                 res.cookie("rememberMe", userToLogin.email, {maxAge: 120000})
             }
-            res.redirect("/"); 
+            res.redirect("/users/userProfile"); 
         })            
         } else{
             return res.render ('./users/login', {errors:errors.mapped(), old: req.body});

@@ -25,6 +25,13 @@ body{
     padding: 5px;
     margin: 0 auto;
 }
+p.feedback{
+    font-size: 12px;
+    font-weight: 400;
+    color: #fce130;
+    margin: 5px auto;
+    max-width: 250px;
+}
 .secondari-forms-container{
     display: flex;
     flex-direction: column;
@@ -98,7 +105,14 @@ a{
     text-align: center;
     padding: 2px;
     color: #e3ecfa;
-
+}
+.errores li {
+    list-style: none;
+    color:#842029;
+    background-color: #F8D7DA;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
 }
 .end-frase{
     display: block;

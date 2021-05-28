@@ -6,7 +6,7 @@
 <!-- Include Header -->
 <%- include ('../partials/header.ejs') %>
   <main class="main-style">
-        <h2 class="titulo">Bienvenido a tu perfil</h2>
+        <h2 class="titulo">Bienvenido a tu perfil <%= locals.userLogged.first_name %></h2>
         
         <% if (locals.userLogged != undefined) { %>
 
@@ -16,12 +16,12 @@
                 </div>
                 <div class="col-der">
                     <div>
-                        <p>Nombre: <%= locals.userLogged.first_name %> <%= locals.userLogged.last_name %></p>
+                        <p class="name">Nombre Completo: <%= locals.userLogged.first_name %> <%= locals.userLogged.last_name %></p>
                         <br>
-                        <p>email: <%= locals.userLogged.email %> </p>
+                        <p class="name">Email: <%= locals.userLogged.email %> </p>
                         <br>
                         <% if (locals.userLogged.role_id == 2) {%> 
-                        <input type="password" name="" id="secreto" placeholder="Ingrese palabra secreta">
+                        <input type="password" name="" id="secreto" placeholder="Ingrese palabra secreta" class="secret">
                         <% } %>
                         <% if (locals.userLogged.role_id == 2) {%> 
                         <a href="/products/newProduct" class="button-a"><button type="submit" class="lo-button3" id="boton1">Nuevo curso</button></a>

@@ -122,19 +122,37 @@ const productsController ={
 
 // EDITA - Method to Update
 	update: async (req, res) => {
-		let image
-		if(req.file != undefined){
-			image = req.file.filename
-		} else {
-			image = productToEdit.image
-		}
-		await db.Course.update(
-            {...req.body},
-            {
-                where: {id: req.params.id}
-            }
-        );
-		res.redirect('/products');
+		let errors = validationResult (req);
+		let categories = await db.Category.findAll();
+		let audioLangs = await db.Audio.findAll();
+		let subtitles = await db.Subtitle.findAll();
+		let currencies = await db.Currency.findAll();
+		let courseToEdit = await db.Course.findByPk (req.params.id,
+			{include: [
+				{association:"category"},
+				{association:"audio"},
+				{association:"currency"},
+				{association:"subtitles"}
+			]});
+		if(errors.isEmpty()){
+			let image
+			if(req.file != undefined){
+				image = req.file.filename
+			} else {
+				image = courseToEdit.image
+			}
+			db.Course.update(
+            	{...req.body},
+            	{
+                	where: {id: req.params.id}
+            	}
+        	)
+			
+				res.redirect('/products');
+			
+			}else{
+				return res.render ('./products/editProduct', {errors:errors.mapped(), old: req.body, productToEdit: courseToEdit, categories, currencies, audioLangs, subtitles})
+			}
 	},
 
     destroy: async (req,res) =>{

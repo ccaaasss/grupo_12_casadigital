@@ -17,34 +17,35 @@ background-color: black;}
 /* Main */
 
 .titulo{    
-    font-size: 15px;
+    font-size: 20px;
     font-weight: normal;
     margin: 10px 10px;
     text-align: center;
     padding: 10px;
+    color: #fce130;
 }
-
 .main-style{
     background-color:#161d20;
     color:#e3ecfa;
     margin: 25px auto;
     
 }
-
 .main-form-container{
     display: flex;
     max-width: 350px;
     margin: auto;
     justify-content:space-around;
-    
+    flex-wrap: wrap;
 }
-img {
-      
+img {     
     padding: 5px;
     max-width: 100px;
     height: auto;
+    display: block;
 }
-
+.name {
+    text-align: center;
+}
 .logout-form .lo-button { 
     display: block;
     text-align: center;
@@ -77,6 +78,10 @@ img {
 }
 .button-a {
     text-decoration: none;
+}
+.secret {
+    text-align: center;
+    width: 100%;
 }
 
 @media (min-width: 641px) {

@@ -2,7 +2,7 @@ const {check} = require("express-validator");
 const path = require("path");
 const { nextTick } = require("process");
 
-let validateNewProduct = [
+let validateProduct = [
     check("course_title")
         .notEmpty().withMessage("Debes introducir un nombre").bail()
         .isLength({min: 5}).withMessage("El título debe tener al menos 5 caracteres"),
@@ -58,4 +58,4 @@ let validateNewProduct = [
     .notEmpty().withMessage("Debes introducir el nombre del profesor").bail(),
 ];
 
-module.exports = validateNewProduct;
+module.exports = validateProduct;

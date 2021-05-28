@@ -8,7 +8,7 @@ const path = require("path");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 //Middleware para validacion de formulario del Backend:
-const validateNewProduct = require("../middlewares/validateNewProduct");
+const validateProduct = require("../middlewares/validateProduct");
 
 // Requiero el controller al que apuntan las rutas que defino maás abajo:
 const productsController = require("../controllers/productsController.js")
@@ -31,7 +31,7 @@ router.get("/productList", authMiddleware, productsController.productList);
 
 //  Rutas para: Creación de productos
 router.get("/newProduct", authMiddleware, productsController.create);
-router.post('/', upload.single("image"), validateNewProduct, productsController.store);
+router.post('/', upload.single("image"), validateProduct, productsController.store);
 
 //  Rutas para: Listado de productos:
 router.get("/", productsController.index);
@@ -47,7 +47,7 @@ router.get("/:id/productDetail", productsController.detail);
 
 //  Rutas para: Edición de productos
 router.get('/:id/edit', authMiddleware, productsController.edit); 
-router.put('/:id', upload.single("image") ,validateNewProduct, productsController.update);
+router.put('/:id', upload.single("image") ,validateProduct, productsController.update);
 
 //  Rutas para: Borrado de productos
 router.delete('/:id', productsController.destroy);

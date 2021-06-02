@@ -64,26 +64,25 @@ const productsController ={
             } else {
                 image = 'default-image.jpg'
             }
-            db.Course.create ({
-                    course_title: req.body.course_title,
-                    short_description: req.body.short_description,
-                    image: image,
-                    long_description:req.body.long_description,
-                    category_id: req.body.category_id,
-					requirements: req.body.requirements,
-                    who_can: req.body.who_can,
-                    audio_id:req.body.audio_id,
-                    price: req.body.price,
-                    discount: req.body.discount,
-					currency_id:req.body.currency_id,
-					course_owner:req.body.course_owner,
-					creation_date: Date.now(),
-                    
-            })
-            .then(products =>{
-                //req.session.userLogged = user;
-                res.redirect('./products');
-            })
+			let newCourse = await db.Course.create ({
+
+				course_title: req.body.course_title,
+				short_description: req.body.short_description,
+				long_description: req.body.long_description,
+				category_id: req.body.category_id,
+				requirements: req.body.requirements,
+				who_can: req.body.who_can,
+				audio_id: req.body.audio_id,
+				price: req.body.price,
+				discount: req.body.discount,
+				currency_id: req.body.currency_id,
+				course_owner: req.body.course_owner,
+				image: image,
+				creation_date: new Date()
+			})
+			await newCourse.addSubtitles(req.body.subtitle_id)
+			
+			res.redirect ('./products')
 
         } else{
             return res.render ('./products/newProduct', {errors:errors.mapped(), old: req.body, categories, currencies, audioLangs, subtitles});
@@ -117,7 +116,11 @@ const productsController ={
 				{association:"subtitles"}
 			]});
 
-        res.render ('./products/editProduct',{productToEdit: courseToEdit, categories, currencies, audioLangs, subtitles, toThousand})
+        let selectedSubtitles =[];
+		courseToEdit.subtitles.forEach((language) => {selectedSubtitles.push(language.id)})
+		res.render ('./products/editProduct',{productToEdit: courseToEdit, categories, currencies, audioLangs, subtitles, selectedSubtitles, toThousand})
+		
+		console.log(selectedSubtitles)
     },
 
 // EDITA - Method to Update
@@ -141,18 +144,32 @@ const productsController ={
 			} else {
 				image = courseToEdit.image
 			}
-			db.Course.update(
-            	{...req.body},
-            	{
-                	where: {id: req.params.id}
-            	}
-        	)
+			await db.Course.update(
+				{
+					course_title: req.body.course_title,
+					short_description: req.body.short_description,
+					long_description: req.body.long_description,
+					category_id: req.body.category_id,
+					requirements: req.body.requirements,
+					who_can: req.body.who_can,
+					audio_id: req.body.audio_id,
+					price: req.body.price,
+					discount: req.body.discount,
+					currency_id: req.body.currency_id,
+					course_owner: req.body.course_owner,
+					image: image,
+				},
+				{
+					where: {id: req.params.id}
+				}
+			);
+			let updatedCourse = await db.Course.findByPk (req.params.id);
+			await updatedCourse.setSubtitles(req.body.subtitle_id);
+			res.redirect('/products');
 			
-				res.redirect('/products');
-			
-			}else{
-				return res.render ('./products/editProduct', {errors:errors.mapped(), old: req.body, productToEdit: courseToEdit, categories, currencies, audioLangs, subtitles})
-			}
+		}else{
+			return res.render ('./products/editProduct', {errors:errors.mapped(), old: req.body, productToEdit: courseToEdit, categories, currencies, audioLangs, subtitles})
+		}
 	},
 
     destroy: async (req,res) =>{

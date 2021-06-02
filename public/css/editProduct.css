@@ -68,6 +68,23 @@ p.feedback{
     text-align: left;
     display: flex;
 }
+.form-format-subtitle{
+    
+    width: 300px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #e3ecfa;
+    border: 1px solid #e3ecfa;
+    color: black;
+    margin: 10px;
+    text-align: left;
+    display: flex;
+}
+.form-media{
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+}
 .detail{
     height: 100px;
     display: flex;
@@ -144,6 +161,9 @@ a{
         height: 25px;
         width: 600px;
     }
+    .form-format-subtitle{
+        width: 600px;
+     }
     .detail{
         height: 100px;
     }

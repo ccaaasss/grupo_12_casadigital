@@ -66,14 +66,25 @@
                                 <p class="feedback"><%= errors.who_can.msg %></p>
                             <% } %>
                         </div>
-                        <div class="form-box">  
-                            <p class="body-format">Idioma del audio:</p>              
-                            <select name="audio_id" autocomplete="off" placeholder="Idioma del audio" class="form-format">
-                                <% for( audioLang of audioLangs ) { %>                                
-                                    <option class="form-select" value=<%= audioLang.id %>><%=audioLang.audioLang%></option>                                
+                        <div class="form-media">
+                            <div class="form-box">  
+                                <p class="body-format">Idioma del audio:</p>              
+                                <select name="audio_id" autocomplete="off" placeholder="Idioma del audio" class="form-format">
+                                    <% for( audioLang of audioLangs ) { %>                                
+                                        <option class="form-select" value=<%= audioLang.id %>><%=audioLang.audioLang%></option>                                
                                     <% } %>
                                 </select>
-                            </div>  
+                            </div>
+                            <div class="form-box">  
+                                <p class="body-format">Idioma de los subtítulos:</p>
+                                <p class="body-format small">(Podés elegir más de uno)</p>              
+                                <select name="subtitle_id" autocomplete="off" placeholder="Idioma de los subtítulos" class="form-format-subtitle" size="3" multiple>
+                                    <% for( subtitle of subtitles ) { %>                                
+                                        <option class="form-select" value=<%= subtitle.id %>><%=subtitle.ccLang%></option>                                
+                                    <% } %>
+                                </select>
+                            </div> 
+                        </div> 
                             <div class="form-box">  
                                 <p class="body-format">Precio:</p>                
                                 <input type="number" name="price" autocomplete="off" 

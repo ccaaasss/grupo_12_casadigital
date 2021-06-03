@@ -34,9 +34,8 @@ main {
     background-color: #242424;
     color: #e3ecfa;
     font-size: 12px;
-    margin-top: 15px;
     margin-left: 20px;
-    padding: 0;
+    padding: 10px 0px;
     max-width: 1200px;
 }
 .product-box {
@@ -83,7 +82,7 @@ main {
 @media (min-width: 641px) {
     
     .main-categorias {
-        height: 20vh;
+        height: 20%;
     }
     .carrousel {
         height: 20vh;

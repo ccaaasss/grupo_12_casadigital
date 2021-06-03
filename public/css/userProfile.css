@@ -24,6 +24,13 @@ background-color: black;}
     padding: 10px;
     color: #fce130;
 }
+.rol{    
+    font-size: 15px;
+    font-weight: 700;
+    margin: 10px 10px;
+    text-align: center;
+    padding: 10px;
+}
 .main-style{
     background-color:#161d20;
     color:#e3ecfa;

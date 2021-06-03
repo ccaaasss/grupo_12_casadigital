@@ -7,6 +7,9 @@
 <%- include ('../partials/header.ejs') %>
   <main class="main-style">
         <h2 class="titulo">Bienvenido a tu perfil <%= locals.userLogged.first_name %></h2>
+        <% if (locals.userLogged.role_id == 2) {%> 
+            <p class="rol">Eres admin del sitio</p>
+            <% } %>
         
         <% if (locals.userLogged != undefined) { %>
 

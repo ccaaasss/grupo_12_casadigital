@@ -14,7 +14,7 @@ INSERT INTO `categories` (category_name)
 VALUES
 ("Finanzas"),
 ("Excel"),
-("Desarollo"),
+("Desarrollo"),
 ("Fotografía");
 
 -- Dumping data for table `currencies`
@@ -150,5 +150,6 @@ VALUES
 
 INSERT INTO `users` (first_name, last_name, email, password, birth_date, image, role_id)
 VALUES
-('Flavio','Salinas','flavio@hotmail.com','$2b$10$2LRXUxYMjazn/i6.EyRuLuYoBoxsWCJt300XrZbXrudA5D6RBIsFq','1972-11-30','img-1616548415996.jpg',2),
-('Juan','Pérez','juan@gmail.com','$2b$10$.u7FCu5Ug0WJ/UpGIG9tG.Wl7Ll2Mj3y4A1NHii0BT6IcNFHlaoQi','1986-08-11','default-avatar.jpg',1);
+('Flavio','Salinas','flavio.salinas@casadigital.com.ar','$2b$10$2LRXUxYMjazn/i6.EyRuLuYoBoxsWCJt300XrZbXrudA5D6RBIsFq','1972-11-30','img-1621482427227.jpg',2),
+('Luciano','Segura','luciano.segura@casadigital.com.ar','$2b$10$ntFaK7GrnxiQoXorBs4GhOqREfEm5L8EUs8Kt9xFMWABp8RjnNs8G','1979-09-21','img-1620060976226.jpg',2),
+('Nadia','Mamsuk','nadia.mamsuk@casadigital.com.ar','$2b$10$p99l8VMTugGsnLaBkzMgu.ayvSmG9PREgNhDh.DOWKqwAz2fuNtru','1985-04-12','img-1622689068822.jpg',2),

@@ -81,6 +81,7 @@ const productsController ={
 				creation_date: new Date()
 			})
 			await newCourse.addSubtitles(req.body.subtitle_id)
+			console.log(req.body)
 			
 			res.redirect ('./products')
 

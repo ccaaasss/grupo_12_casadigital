@@ -91,12 +91,24 @@ p.feedback{
     height: 100px;
     display: flex;
 }
-.form-select{font-size: 16px;
+.form-select{
+    font-size: 16px;
     font-weight: 400;
     background-color: #e3ecfa;
     border: 1px solid #e3ecfa;
     color: black;
     text-align: left;
+}
+.main-sub {
+    display: flex;
+    font-size: 16px;
+    padding-top: 5px;
+}
+.form-select-1{
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 5px;
+    margin-left: 15px;
 }
 .frase{    
     font-size: 20px;

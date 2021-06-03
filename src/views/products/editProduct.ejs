@@ -78,12 +78,12 @@
                         </div>
                         <div class="form-box">  
                             <p class="body-format">Idioma de los subtítulos:</p>
-                            <p class="body-format small">(Podés elegir más de uno)</p>              
-                            <select name="subtitle_id" autocomplete="off" placeholder="Idioma de los subtítulos" class="form-format-subtitle" size="3" multiple>
-                                <% for( subtitle of subtitles ) { %>                                    
-                                    <option class="form-select" value=<%= subtitle.id %> <%= selectedSubtitles.includes(subtitle.id) ? 'selected' :'' %> ><%=subtitle.ccLang%></option>
-                                <% } %>
-                            </select>
+                            <p class="body-format small">(Podés elegir más de uno)</p>  
+                            <div class="main-sub">             
+                                    <% for( subtitle of subtitles ) { %>                                
+                                        <input name="subtitle_id" type="checkbox" class="form-select-1" value=<%= subtitle.id %> <%= selectedSubtitles.includes(subtitle.id) ? 'checked' :'' %> ><%=subtitle.ccLang%></input>                                
+                                    <% } %>
+                            </div>
                         </div>
                     </div>
                     <div class="form-box">

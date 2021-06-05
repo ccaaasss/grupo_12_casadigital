@@ -48,7 +48,7 @@ const coursesAPIController = {
                     Desarrollo: Desarrollo,
                 },
             },
-            data: coursesURL
+            Product: coursesURL
         };
         res.json(respuesta);
     },

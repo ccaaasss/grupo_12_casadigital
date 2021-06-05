@@ -3,43 +3,38 @@ const sequelize = db.sequelize;
 
 
 const coursesAPIController = {
-    'list': (req, res) => {
-        db.Course.findAll(
+    'list': async (req, res) => {
+        let courses = await db.Course.findAll(
             {
             include: ['category'],
             attributes: ['id','course_title','short_description']
-        }
-          )
-        .then(courses => {
-            let cursos = courses.map(course=>{
-                course = {...course, url:"/api/course/`${course.id}`"}
-            })
-            let respuesta = {
-                meta: {
-                    count: courses.length,
-                    countByCategory: "Prueba",
-                },
-
-                data: cursos
-
             }
-                res.json(respuesta);
-            })
+        );        
+        let coursesURL = courses.map(course =>{            
+            course.dataValues.url = `/api/courses/${course.id}`;
+            return course
+        });
+        let respuesta = {
+            meta: {
+                count: courses.length,
+                countByCategory: "Prueba",
+            },
+            data: coursesURL
+        };
+        res.json(respuesta);
     },
-    // 'detail': (req, res) => {
-    //     db.Course.findByPk(req.params.id)
-    //         .then(course => {
-    //             res.status(200).json({
-    //                 meta: {
-    //                     status: 200,
-    //                     total: course.lenght,
-    //                     url: "api/:id/courses",
-    //                 },
-    //                 data: course,  
-    //             });
-    //         });
-    // }
+    'detail': async (req, res) => {
+        let course = await db.Course.findByPk (req.params.id,
+			{include: [
+				{association:"category"},
+				{association:"audio"},
+				{association:"currency"},
+				{association:"subtitles"}
+			]});
+        course.dataValues.image = `/images/products/${course.image}`;
+        res.json(course);
+    }
 
-}
+};
 
 module.exports = coursesAPIController;

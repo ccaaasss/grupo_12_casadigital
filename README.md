@@ -19,5 +19,6 @@
 <li>Sprint#04: https://trello.com/b/yDLyW6cR/sprint-4 </li>
 <li>Sprint#05: https://trello.com/b/6978EIPI/sprint-5 </li>
 <li>Sprint#06: https://trello.com/b/WarHcZOo/sprint-6 </li>
-<li>Sprint#07: https://trello.com/b/g8qi16W3/sprint-7 </li> 
+<li>Sprint#07: https://trello.com/b/g8qi16W3/sprint-7 </li>
+<li>Sprint#08: https://trello.com/b/Rd7SBrmr/sprint-8 </li> 
 </ul>

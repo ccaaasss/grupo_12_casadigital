@@ -10,10 +10,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        category_img: {
-            type: dataTypes.STRING(50),
-            allowNull: false
-        },
+        // category_img: {
+        //     type: dataTypes.STRING(50),
+        //     allowNull: false
+        // },
     };
     let config = {
         tableName: 'categories',

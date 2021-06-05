@@ -16,7 +16,7 @@ const usersAPIController = {
             meta: {
                 count: users.length,
             },
-            Product: usersURL
+            User: usersURL
         }
        
         res.json(respuesta);

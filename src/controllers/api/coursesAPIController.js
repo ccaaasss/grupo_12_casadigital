@@ -14,10 +14,39 @@ const coursesAPIController = {
             course.dataValues.url = `/api/courses/${course.id}`;
             return course
         });
+        let Finanzas = 0;
+        courses.map(course =>{            
+            if (course.category.category_name == "Finanzas"){
+                Finanzas = Finanzas + 1
+            }
+        });
+        let Excel = 0;
+        courses.map(course =>{            
+            if (course.category.category_name == "Excel"){
+                Excel = Excel + 1
+            }
+        });
+        let Desarrollo = 0;
+        courses.map(course =>{            
+            if (course.category.category_name == "Desarrollo"){
+                Desarrollo = Desarrollo + 1
+            }
+        });
+        let Fotografia = 0;
+        courses.map(course =>{            
+            if (course.category.category_name == "Fotografía"){
+                Fotografia = Fotografia + 1
+            }
+        });
         let respuesta = {
             meta: {
                 count: courses.length,
-                countByCategory: "Prueba",
+                countByCategory: {
+                    Finanzas: Finanzas,
+                    Fotografía: Fotografia,
+                    Excel: Excel,
+                    Desarrollo: Desarrollo,
+                },
             },
             data: coursesURL
         };

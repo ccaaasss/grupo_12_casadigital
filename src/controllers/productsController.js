@@ -183,6 +183,12 @@ const productsController ={
 // Carrito de compras
     productCart: (req,res) =>{res.render ('./products/productCart')},
 
+	productCartAdd: async (req,res) => {
+		let courseToAdd = await db.Course.findByPk(req.params.idprod);
+		await courseToAdd.setUsers(req.params.iduser);
+		res.redirect('/products/productCart');
+	},
+
 
 // Listado de productos para admin
 	productList: async (req,res) => {
@@ -190,7 +196,7 @@ const productsController ={
         let courses = await db.Course.findAll({include: ['category']})
         
         res.render("./products/productList", {products: courses, categories});
-	}
+	},
     
 }
 

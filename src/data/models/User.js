@@ -46,6 +46,13 @@ module.exports = (sequelize, dataTypes) => {
             as: 'role',
             foreignKey: 'role_id',
         })
+        User.belongsToMany(models.Course, {
+            as: 'courses',
+            through: 'course_user',
+            foreignKey:'user_id',
+            otherKey:'course_id',
+            timestamps: false,
+        })
     }
 
     return User

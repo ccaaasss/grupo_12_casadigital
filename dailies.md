@@ -30,3 +30,6 @@ Dailys Sprint#7
 21/5 - Presentamos validacion New Product Back
 25/5 - Presentamos validacion todo Front
 27/5 - Nos juntamos para finalizar el sprint viendo la funcionalidad total
+
+Dailys Sprint#8
+03/6 - Decidimos no realizar daylies este Sprint ya que lo vamos a trabajar todos juntos, en clase y allí hablaremosd e las cosas que hagamos en casa.

@@ -26,8 +26,11 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage});
 
 // Rutas para: Listado de productos para admin
-
 router.get("/productList", authMiddleware, productsController.productList);
+
+//  Aqui irán las rutas para procesar las compras.
+router.get("/productCart", authMiddleware, productsController.productCart);
+router.post("/add/:idprod/:iduser", authMiddleware, productsController.productCartAdd);
 
 //  Rutas para: Creación de productos
 router.get("/newProduct", authMiddleware, productsController.create);
@@ -52,9 +55,6 @@ router.put('/:id', upload.single("image") ,validateProduct, productsController.u
 //  Rutas para: Borrado de productos
 router.delete('/:id', productsController.destroy);
 
-//  Aqui irán las rutas para procesar las compras.
-
-router.get("/productCart", authMiddleware, productsController.productCart);
 
 
 

@@ -93,6 +93,13 @@ module.exports = (sequelize, dataTypes) => {
             otherKey:'id_subtitle',
             timestamps: false,
         })
+        Course.belongsToMany(models.User, {
+            as: 'users',
+            through: 'course_user',
+            foreignKey:'course_id',
+            otherKey:'user_id',
+            timestamps: false,
+        })
     }
 
     return Course

@@ -7,13 +7,23 @@ const coursesAPIController = {
         let courses = await db.Course.findAll(
             {
             include: ['category'],
-            attributes: ['id','course_title','short_description']
+            attributes: ['id','course_title','short_description','price','discount','course_owner']
             }
         );        
         let coursesURL = courses.map(course =>{            
             course.dataValues.url = `/api/courses/${course.id}`;
             return course
         });
+        let categories = []
+            courses.map(category =>{
+            categories.push(category.category.category_name)
+        });
+        const result = [];
+        categories.forEach((item)=>{
+            if(!result.includes(item)){
+                result.push(item);
+            }
+        })
         let Finanzas = 0;
         courses.map(course =>{            
             if (course.category.category_name == "Finanzas"){
@@ -41,7 +51,8 @@ const coursesAPIController = {
         let respuesta = {
             meta: {
                 count: courses.length,
-                countByCategory: {
+                countCategories: result.length,
+                countByCategory: {               
                     Finanzas: Finanzas,
                     Fotografía: Fotografia,
                     Excel: Excel,

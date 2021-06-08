@@ -5,7 +5,8 @@
 <body>
 <!-- Include Header -->
 <%- include ('../partials/header.ejs') %>
-    <main>
+<main>
+        <form  action="/products/add/<%= product.id %>/<%= locals.userLogged.id %> " method="POST">
         <div class="container">
             <div class="row">
                 <div class="col-der">
@@ -181,9 +182,9 @@
                     </div>
                     
                     <div class="cart-checkout">
-                        <a class="btn-checkout" href="/underConstruction">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>COMPRAR</span>                            
+                        <a class="btn-checkout">
+                            <i class="fas fa-shopping-cart"></i>                      
+                            <button type="submit" class="btn-checkout">COMPRAR</button>
                         </a>                        
                     </div>
 
@@ -192,6 +193,7 @@
             </div>
         
         </div>
+        </form>
     </main>
     <!-- Include Footer -->
     <%- include("../partials/footer.ejs") %>

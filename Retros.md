@@ -77,3 +77,17 @@ Realizada la retro del Sprint#6 el Viernes 07/05/2021.
 	Si bien no igual que el sprint pasado, seguimos subestimando las dailies.
 5. Dejar de hacer
 	Ser orgulloso y pedir ayuda cuando lo necesitamos.
+
+Sprint #07
+==========
+Realizada la retro del Sprint#6 el Viernes 07/05/2021.
+1. Comenzar a hacer
+	No hay comentarios, creemos que este sprint estuvo bien organizado. 
+2. Hacer más
+	Dailys, nos relajamos con este tema
+3. Contiuar haciendo
+	Trabajar como lo estamos haciendo.
+4. Hacer menos
+	Tratar de ser detallitas sobre las fechas.
+5. Dejar de hacer
+	En este sprint no hay nada q no tengamos q hacer.

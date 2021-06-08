@@ -24,6 +24,6 @@ window.onload = function(){
                 e.key == "s" ? boton.style.display= "block" : (acceso = 0);
                 break;
 
-       }console.log(acceso);
+       }
     })
 }

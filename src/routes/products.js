@@ -54,7 +54,7 @@ router.delete('/:id', productsController.destroy);
 
 //  Aqui irán las rutas para procesar las compras.
 
-router.get("/productCart", authMiddleware, productsController.productCart);
+router.get("/productCart", productsController.productCart);
 
 
 

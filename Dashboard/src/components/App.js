@@ -4,7 +4,7 @@ import {Switch, Route} from 'react-router-dom';
 import ContentWrapper from './ContentWrapper';
 import LastCourseInDb from './LastCourseInDb';
 import CategoriesInDb from './CategoriesInDb';
-import ContentRowMovies from './ContentRowMovies';
+import AllCourses from './AllCourses';
 import Error404 from './Error404';
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
                 <Switch>
                 <Route path="/" exact component={ContentWrapper} />
                 <Route path="/LastCourseInDb" component={LastCourseInDb} />
-                <Route path="/CategoriesInDb" component={CategoriesInDb} />
-                <Route path="/ContentRowMovies" component={ContentRowMovies} />
+                <Route path="/CategoriesInDb" component={CategoriesInDb} />               
+                <Route path="/AllCourses" component={AllCourses} />                
                 <Route component={Error404} />
                 </Switch>
         </div>

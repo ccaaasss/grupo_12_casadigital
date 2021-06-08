@@ -48,9 +48,9 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/ContentRowMovies">
+                    <Link className="nav-link" to="/AllCourses">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tablas</span></Link>
+                        <span>Listado de cursos</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}

@@ -9,11 +9,6 @@ body {
     background-color: black;
 }
 
-h3 {
-    font-size: 20px;
-}
-
-
 /* MAIN */
 
 main .container {
@@ -25,6 +20,14 @@ main .container {
 main .container .page-header {
     margin: 20px 10px;
     
+}
+.container .page-header h1{
+    margin: 5px;
+    font-size: 22px;
+}
+.page-header .counter{
+    font-size: 12px;
+    margin: 5px;
 }
 main .cart {    
     width: 95%;
@@ -42,66 +45,62 @@ main .container .cart .check-out {
     padding: 5px 5px 20px;    
     border-bottom: 1px solid #e3ecfa;        
 }
-
-
-.product ul {
-    list-style-type: none;
+.product {
+    display: flex;
+    justify-content: center;
 }
+
+.product .product-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
 .product .product-list .cart-list-item {
-    padding: 10px 0px;
-    border-top: 1px solid #e3ecfa;
-    border-bottom: 1px solid #e3ecfa;
+    width: 260px;
+    margin:10px;
+    border: 1px solid #e3ecfa;
+    
 }
 .product .product-list .row {
-    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;    
     display: flex;        
 }
 .row .column {
-    font-size: 14px;
+    padding: 10px;
+    font-size: 12px;
       
 }
-.product-list .row .cart-item-img {
-    padding: 5px 10px 5px 10px;
-    
-}
+
 .row .cart-item-img img {
-    width: 60px;
+    width: 100%;
+    height: auto;
 }
 .cart-item-detail {
     padding-bottom: 5px;
 }
 .cart-item-detail h3 {
     font-size: 14px;
-}
-.price-badges {
     padding-bottom: 5px;
 }
-.price-badges .badge{
-    background-color: #fce130;
-    color: #263238;
-    font-weight:500;
-    padding: 0px 2px;
+.cart-item-audio-subs {
+    padding: 5px 0px;
 }
-.price-badges .price-discount {
-    padding-left: 5px;
+.cart-item-audio-subs li{
+    list-style:  none;
+    padding-bottom: 5px;
 }
-.price-badges .price-code {
-    padding-left: 5px;
+.column .rating{
+    display: flex;
+    padding-top: 5px;
+    border-top: 1px solid #e3ecfa;
+    justify-content: space-between;
 }
-.price-badges .price-code,
-.dicounted-price {
-    text-decoration:line-through ;
-}
-.cart-item-price {
-    text-align: right;
-    padding-right: 10px;
-}
-.row .remove-cart-list-item {
-    padding-right: 10px;
-    text-align: right;
-    flex-grow: 1;
-
-}
+.rating .stars .checked {
+    color: #fce130;
+  }
 .cart-box-total {
     text-align: right;
     
@@ -145,6 +144,10 @@ main .container .cart .check-out {
     main div.container{
         max-width: 641px;
         margin: auto;
+    }
+    .product .product-list{
+        justify-content: unset;
+        
     }
 
 }

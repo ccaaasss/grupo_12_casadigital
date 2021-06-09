@@ -196,10 +196,10 @@ const productsController ={
 					{association:"category"},
 					{association:"audio"},
 					{association:"currency"},
-					{association:"subtitles"}
+					{association:"subtitles"},
+					{association:"users"}
 				]}
 			);
-			
 			res.render ('./products/productCart', {products: userCourses});
 			
 		} else {

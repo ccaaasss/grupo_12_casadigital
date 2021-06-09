@@ -188,7 +188,25 @@ const productsController ={
     },
     
 // Carrito de compras
-    productCart: (req,res) =>{res.render ('./products/productCart')},
+    productCart: async (req,res) =>{
+		if (req.session.userLogged != undefined) {
+			let userLogged = await db.User.findByPk (req.session.userLogged.id);
+			let userCourses = await userLogged.getCourses(
+				{include: [
+					{association:"category"},
+					{association:"audio"},
+					{association:"currency"},
+					{association:"subtitles"}
+				]}
+			);
+			
+			res.render ('./products/productCart', {products: userCourses});
+			
+		} else {
+			res.redirect("/users/login");
+		}	
+		
+	},
 
 	productCartAdd: async (req,res) => {
 		let courseToAdd = await db.Course.findByPk(req.params.idprod);

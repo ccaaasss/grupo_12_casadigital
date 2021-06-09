@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #161d20;
+    background-color: black;
 }
 
 h3 {
@@ -17,6 +17,7 @@ h3 {
 /* MAIN */
 
 main .container {
+    padding: 10px;
     color: #e3ecfa;
     background-color: #161d20;
 
@@ -48,6 +49,7 @@ main .container .cart .check-out {
 }
 .product .product-list .cart-list-item {
     padding: 10px 0px;
+    border-top: 1px solid #e3ecfa;
     border-bottom: 1px solid #e3ecfa;
 }
 .product .product-list .row {

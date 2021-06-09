@@ -10,145 +10,55 @@
         <div class="container">
             <section class="page-header">
                 <h1 class="cart-title">
-                    <i class="fas fa-shopping-cart"></i>
-                    Carrito
-                    <span>(2 cursos)</span>
+                    <i class="fas fa-list-ul"></i>
+                    Mi lista
+                    <span>(<%= products.length %> cursos)</span>
                 </h1>
-                <div class="return-home">
-                    <a class="link-home" href="/">
-                        Seguir viendo cursos
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
-            </section>                
-
+            </section> 
             <section class="cart">
-                <div class="check-out">
-                    <a href="#">
-                        <i class="fas fa-shopping-cart"></i>
-                        Finalizar compra
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
                 <div class="product">
                     <ul class="product-list">
-                        <li class="cart-list-item">
-                            <div class="row">
-                                <div class="cart-item-img">
-                                    <img src="images/Curso_1.jpg" alt="Imagen del Curso_1">
-                                </div>
-                                <div class="column">
-                                    <div class="cart-item-detail">
-                                        <h3 class="cart-item-title">
-                                            Estrategia de marca en Instagram
-                                        </h3>
-                                        <p class="cart-item-info">Un curso de Julieta Tello</p>
-                                    </div>                                    
-                                    <div class="price-badges">
-                                        <span class="badge"> REBAJAS </span>
-                                        <span class="price-discount"> 60% Dto. </span>
-                                        <span class="price-code"> AR$ </span>
-                                        <span class="dicounted-price"> 2.000</span>
+                        <% for( product of products ) { %>
+                            <li class="cart-list-item">
+                                <div class="row">
+                                    <div class="cart-item-img">
+                                        <img src="/images/products/<%= product.image %>" alt="Imagen del Curso">
                                     </div>
-                                    <div class="cart-item-audio-subs">
-                                        <ul>
-                                            <li class="audio-subs-detail">
-                                                <i class="fas fa-volume-up"></i>
-                                                "Español"
-                                            </li>
-                                            <li class="audio-subs-detail">
-                                                <i class="far fa-closed-captioning"></i>
-                                                "Español, Inglés, Alemán"
-                                            </li>
-                                        </ul>
+                                    <div class="column">
+                                        <div class="cart-item-detail">
+                                            <h3 class="cart-item-title">
+                                                <%= product.course_title %>
+                                            </h3>
+                                            <p class="cart-item-info">Un curso de: <%= product.course_owner %></p>
+                                        </div>                                        
+                                        <div class="cart-item-audio-subs">
+                                            <ul>
+                                                <li class="audio-subs-detail">
+                                                    <i class="fas fa-volume-up"></i>
+                                                    <%= product.audio.audioLang %>
+                                                </li>
+                                                <li class="audio-subs-detail">
+                                                    <i class="far fa-closed-captioning"></i>
+                                                    <% for (let i = 0; i < product.subtitles.length; i++) { %>
+                                                        <%= product.subtitles[i].ccLang %>
+                                                    <% } %>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <a class="remove-cart-list-item" href="#">
-                                    <i class="far fa-trash-alt"></i>
-                                </a>
-                                
-                            </div>
-                            
-                            <div class="cart-item-price-wrapper">
-                                <div class="cart-item-price">
-                                    <span class="price-code"> AR$ </span>
-                                    <span class="price"> 1.200</span>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="cart-list-item">
-                            <div class="row">
-                                <div class="cart-item-img">
-                                    <img src="images/Curso_2.jpg" alt="Imagen del Curso_2">
-                                </div>
-                                <div class="column">
-                                    <div class="cart-item-detail">
-                                        <h3 class="cart-item-title">
-                                            Estrategia de marca en Instagram
-                                        </h3>
-                                        <p class="cart-item-info">Un curso de Arantxa & Guille</p>
-                                    </div>                                    
-                                    <div class="price-badges">
-                                        <span class="badge"> REBAJAS </span>
-                                        <span class="price-discount"> 70% Dto. </span>
-                                        <span class="price-code"> AR$ </span>
-                                        <span class="dicounted-price"> 3.000</span>
-                                    </div>
-                                    <div class="cart-item-audio-subs">
-                                        <ul>
-                                            <li class="audio-subs-detail">
-                                                <i class="fas fa-volume-up"></i>
-                                                "Español"
-                                            </li>
-                                            <li class="audio-subs-detail">
-                                                <i class="far fa-closed-captioning"></i>
-                                                "Español, Inglés, Alemán"
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <a class="remove-cart-list-item" href="#">
-                                    <i class="far fa-trash-alt"></i>
-                                </a>
-                                
-                            </div>
-                            <div class="cart-item-price-wrapper">
-                                <div class="cart-item-price">
-                                    <span class="price-code"> AR$ </span>
-                                    <span class="price"> 2.100</span>
-                                </div>
-                            </div>
-                        </li>  
+                            </li>
+                        <% } %>
+                        
                     </ul>
                 </div>
                 <div class="cart-box-total">
                     <div class="total-row">
-                        <div class="total-col-1">
-                            <div class="cart-box-total-counts">
-                                <b class="grand-total">Total:</b>
-                                <span class="price-code">AR$</span>
-                                <span class="total-price">3.300</span>
-                            </div>
-                        </div>
-                        <div class="total-col-2">
-                            <p class="cart-info-section">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui pariatur, cumque rerum est voluptatibus labore quos earum ab hic perferendis, ea molestiae dicta in quod repudiandae quaerat veniam itaque velit!
-                            </p>
-                        </div>
                         <div class="cart-checkout">
-                            <a class="btn-checkout" href="#">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span>Finalizar compra</span>
+                            <a class="btn-checkout" href="/">
+                                <span>Seguir viendo cursos</span>
                                 <i class="fas fa-long-arrow-alt-right"></i>
                             </a>
-                            <div class="pay-method">
-                                <i class="fab fa-cc-visa"></i>
-                                <i class="fab fa-cc-mastercard"></i>
-                                <i class="fab fa-cc-amex"></i>
-                                <i class="fab fa-cc-discover"></i>
-                                <i class="fab fa-cc-paypal"></i>                                
-                            </div>
                         </div>
                     </div>
                 </div>

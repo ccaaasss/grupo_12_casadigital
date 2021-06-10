@@ -134,6 +134,31 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1
 COLLATE = latin1_bin;
 
+-- -----------------------------------------------------
+-- Table `casa_digital_db`.`course_user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `casa_digital_db`.`course_user` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `user_id` INT(11) NOT NULL,
+  `course_id` INT(11) NOT NULL,
+  `rating` INT(1),
+  PRIMARY KEY (`id`),
+  INDEX `user_id_idx` (`id_course` ASC),
+  INDEX `course_id_idx` (`id_subtitle` ASC),
+  CONSTRAINT `course_id`
+    FOREIGN KEY (`course_id`)
+    REFERENCES `casa_digital_db`.`courses` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `user_id`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `casa_digital_db`.`users` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1
+COLLATE = latin1_bin;
+
 
 -- -----------------------------------------------------
 -- Table `casa_digital_db`.`roles`

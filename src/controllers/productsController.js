@@ -29,13 +29,20 @@ const productsController ={
     },
 
 // Muestra todos los productos de la categoría seleccionada:
-	byCategory: async (req, res)=>{		
+	byCategory: async (req, res)=>{	
 		let categories = await db.Category.findAll({
 			where:{ category_name: req.params.category }
 		})
-        let courses = await db.Course.findAll({include: ['category']})
+        let courses = await db.Course.findAll(			
+			{include: [
+				{association:"category"},
+				{association:"audio"},
+				{association:"currency"},
+				{association:"subtitles"}
+		]}
+		)
         
-        res.render("./products/products", {products: courses, categories});
+        res.render("./products/products", {products: courses, categories, toThousand});
 
 
 	},

@@ -17,13 +17,18 @@ const mainController ={
     //     res.render ('home',{products});
     // },
     index: (req,res) => {
-        db.Course.findAll(
+       db.Course.findAll(
             {include: [
 				{association:"category"},
 				{association:"audio"},
 				{association:"currency"},
 				{association:"subtitles"}
-			]}
+			]},
+            {
+                order: [
+                    ['creation_date', 'DESC']
+                ]
+            }
         )
         .then(courses => {
             res.render('home', {products: courses, toThousand});

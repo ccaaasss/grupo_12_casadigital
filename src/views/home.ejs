@@ -12,7 +12,7 @@
       </div>
       <div class="row">
         <div class="column">
-          <a href="/products/Desarrollo"><img class="responsive-img" src="/images/products/desarrollo.jpg" alt=""></a>>
+          <a href="/products/Desarrollo"><img class="responsive-img" src="/images/products/desarrollo.jpg" alt=""></a>
         </div>
         <div class="column">
           <a href="/products/Fotografía"><img class="responsive-img" src="/images/products/fotografia.jpg" alt=""></a>
@@ -30,8 +30,7 @@
       <div class="row">
         <% let counter = 0 %>
         <% for (product of products) {%>
-          <% let hoy = new Date() %>
-          <% if (parseInt((hoy - Date.parse(product.creation_date))/(24*3600*1000)) < 9999 && counter < 4) { 	%>
+          <% if (counter < 4) { 	%>
             <div class="column tooltip">
               <a class="link" href="/products/<%= product.id %>/productDetail"><img class="responsive-img" src="/images/products/<%= product.image %>" alt="Imagen del curso"></a>
               <span class="tooltiptext">

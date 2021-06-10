@@ -39,7 +39,7 @@ const productsController ={
 				{association:"audio"},
 				{association:"currency"},
 				{association:"subtitles"}
-		]}
+			]}
 		)
         
         res.render("./products/products", {products: courses, categories, toThousand});
@@ -50,8 +50,15 @@ const productsController ={
 // Muestra todos los productos de la categoría seleccionada:
 	byCommunity: async (req, res)=>{
 		let community = req.params.community;
-		let courses = await db.Course.findAll({include: ['category']})
-		res.render("./products/community",{products: courses, community});
+		let courses = await db.Course.findAll(
+			{include: [
+				{association:"category"},
+				{association:"audio"},
+				{association:"currency"},
+				{association:"subtitles"}
+			]}
+		)
+		res.render("./products/community",{products: courses, community,toThousand});
 	},
 
 

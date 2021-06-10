@@ -43,7 +43,7 @@ header {
     font-size: 15px;
     margin-right: 15px;
     display: none;
-    width: 100px;
+    width: 40%;
 }
 .main-navbar i {
     color: #e3ecfa;
@@ -91,6 +91,10 @@ header {
     border-style: none;
     width: fit-content;
 }
+.search {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* footer */
 footer {
@@ -136,26 +140,35 @@ footer {
 }
 
 /* responsive */
-@media (min-width: 641px) {
+@media (min-width: 700px) {
     .main-navbar i {
         margin: 0 3px;
     }
     .text-nav {
         display: inline-block;
-    } 
+    }
     .text-nav-1 {
         display: inline-block;
+        width: 50%;
     }
     .text-nav {
         font-size: 10px;
     }
 }
-@media (min-width: 721px) {
+@media (min-width: 805px) {
     .text-nav {
         font-size: 15px;
     }
     .login {
         font-size: 15px;
+    }
+    .text-nav-1 {
+        width: 70%;
+    }
+}
+@media (min-width: 900px) {
+    .text-nav-1 {
+        width: 100%;
     }
 }
 

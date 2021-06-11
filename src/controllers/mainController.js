@@ -24,26 +24,18 @@ const mainController ={
     },
 
     search: async (req,res) => {
-        const searchResult = await db.Course.findAll(
+        const courses = await db.Course.findAll(
             {include: [
 				{association:"currency"},
                 {association:"category"},
 				{association:"audio"},
 				{association:"subtitles"}
-			],
-            where: {
-                [Op.or]: [
-                  {
-                    course_title: {[Op.like]:"%" + req.body.search + "%"}
-                  },
-                  {
-                    course_title: {[Op.like]:"%" + req.body.search.toLowerCase() + "%"}
-                  }
-                ]
-              }            
-        }
+			],                      
+            }
         );
         let search = req.body.search;
+        let searchResult = courses.filter(course => course.course_title.toLowerCase().includes(search.toLowerCase()));
+
         res.render("./products/productsSearch", {products: searchResult, search, toThousand});
        
     },

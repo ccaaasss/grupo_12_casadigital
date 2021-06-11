@@ -93,7 +93,10 @@ header {
 }
 .search {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+.search .buttons{
+    border: none;
 }
 
 /* footer */

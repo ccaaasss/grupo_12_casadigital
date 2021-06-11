@@ -9,7 +9,7 @@ const mainController = require("../controllers/mainController.js");
 
 // Defino las rutas, es decir que controlador y cuál de sus métodos es el que va a manejar el requerimiento
 router.get("/", mainController.index);
-router.get('/search', mainController.search);
+router.post('/search', mainController.search);
 router.get("/UnderConstruction", mainController.underConstruction);
 
 module.exports = router;

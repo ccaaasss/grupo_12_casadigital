@@ -5,6 +5,7 @@ window.onload = function(){
     const photo = document.querySelector("#photo");
     const login = document.querySelector("#login");
     const search = document.querySelector("#search");
+    const form = document.querySelector("#form")
 
     lupita.addEventListener("click", function(e){
         if (nombre != "anonymous"){
@@ -29,5 +30,11 @@ window.onload = function(){
     lupita.addEventListener("click", function(e){
         search.style.display= "block";
         search.style.width= "100%";
+    })
+    form.addEventListener("submit", function(e){
+        if (form.search.value.length < 3){
+            e.preventDefault();
+            alert("Debe ingresar al menos 3 caracteres")
+        }
     })
 }

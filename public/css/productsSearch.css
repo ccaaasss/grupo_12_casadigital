@@ -55,14 +55,15 @@ main {
     background-color: #242424;
     max-width: 1200px;
     padding: 10px 15px;
-    margin: 5px;    
+    margin: 5px;
+    flex-wrap: wrap;    
 }
   
   /* Create four equal columns that sit next to each other */
   .column {
     background-color: #242424;
     width: 25%;
-    margin: 0px 5px;
+    margin: 10px 5px;
     border: grey 1px solid;
     border-radius: 5px;
   }

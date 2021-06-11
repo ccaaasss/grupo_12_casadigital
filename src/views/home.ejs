@@ -10,22 +10,37 @@
       <div class="carrousel">
         <img src="/images/products/sale2.jpg" class="responsive-img">
       </div>
+      <div class="div-separadores">
+        <p class="separadores" style="color: #fce130;">CATEGORIAS</p>
+      </div>
       <div class="row">
-        <div class="column">
+        <div class="column tooltip">
           <a href="/products/Desarrollo"><img class="responsive-img" src="/images/products/desarrollo.jpg" alt=""></a>
+          <span class="tooltiptext">
+            <div class="course-title">DESARROLLO</div>
+          </span>
         </div>
-        <div class="column">
+        <div class="column tooltip">
           <a href="/products/Fotografía"><img class="responsive-img" src="/images/products/fotografia.jpg" alt=""></a>
+          <span class="tooltiptext">
+            <div class="course-title">FOTOGRAFIA</div>
+          </span>
         </div>
-        <div class="column">
+        <div class="column tooltip">
           <a href="/products/Finanzas"><img class="responsive-img" src="/images/products/finanzas.jpg" alt=""></a>
+          <span class="tooltiptext">
+            <div class="course-title">FINANZAS</div>
+          </span>
         </div>
-        <div class="column">
+        <div class="column tooltip">
           <a href="/products/Excel"><img class="responsive-img" src="/images/products/personal.jpg" alt=""></a>
+          <span class="tooltiptext">
+            <div class="course-title">EXCEL</div>
+          </span>
         </div>
       </div>
       <div class="div-separadores">
-        <p class="separadores">NOVEDADES EN LA CASA DIGITAL</p>
+        <p class="separadores">Novedades en la Casa Digital</p>
       </div>
       <div class="row">
         <% let counter = 0 %>
@@ -75,7 +90,7 @@
         <% } %>
       </div>
       <div class="div-separadores">
-        <p class="separadores">LO MAS VENDIDO</p>
+        <p class="separadores">Lo Mas Vendido</p>
       </div>
       <div class="row">
         <% for (product of products) {%>
@@ -124,7 +139,7 @@
         <% } %>
       </div>
       <div class="div-separadores">
-        <p class="separadores">COMUNIDAD</p>
+        <p class="separadores">Comunidad</p>
       </div>
       <div class="row">
         <div class="column">

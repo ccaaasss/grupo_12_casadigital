@@ -41,7 +41,7 @@ main {
 .separadores {
     background-color: #242424;
     color: #e3ecfa;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 15px;
     margin-left: 20px;
     padding: 0;
@@ -55,13 +55,13 @@ main {
     background-color: #242424;
     max-width: 1200px;
     padding: 10px 15px;
-    margin: 5px;    
+    margin: 5px;
 }
   
   /* Create four equal columns that sit next to each other */
   .column {
     background-color: #242424;
-    width: 25%;
+    width: 40%;
     margin: 0px 5px;
     border: grey 1px solid;
     border-radius: 5px;
@@ -188,5 +188,8 @@ div.price-col div.item-price{
 @media (min-width: 641px) {    
     .row {
       height: 20%;
+    }
+    .column {
+      width: 24%;
     }
 }

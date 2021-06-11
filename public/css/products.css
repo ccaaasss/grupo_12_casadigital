@@ -51,6 +51,7 @@ main {
 
 .row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: #242424;
     max-width: 1200px;
@@ -61,8 +62,9 @@ main {
   /* Create four equal columns that sit next to each other */
   .column {
     background-color: #242424;
-    width: 25%;
+    width: 40%;
     margin: 0px 5px;
+    margin-bottom: 20px;
     border: grey 1px solid;
     border-radius: 5px;
   }
@@ -188,5 +190,8 @@ div.price-col div.item-price{
 @media (min-width: 641px) {    
     .row {
       height: 20%;
+    }
+    .column {
+      width: 24%;
     }
 }

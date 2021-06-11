@@ -68,8 +68,10 @@ header {
     align-items: center;
     justify-content: space-around;
     margin:0 5px;
-    font-size: 10px;
-    
+    font-size: 10px;   
+}
+.loginHidden {
+    display: none;
 }
 .login-parrafo {
     margin: 10px;

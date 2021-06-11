@@ -16,8 +16,9 @@ const usersController ={
 
     register: (req, res)=>{ res.render ('./users/register')}, 
     // Crea - Method To create
-    store: (req,res) =>{
+    store: async (req,res) =>{
         let errors = validationResult(req);
+       
         if(errors.isEmpty()){
             let image        
             if(req.file != undefined){
@@ -25,19 +26,31 @@ const usersController ={
             } else {
                 image = 'default-avatar.jpg'
             }
-            db.User.create ({
+            let existingUser = await db.User.findOne({
+                where: {
+                    email: req.body.email
+                    }
+                });
+            if (existingUser == undefined) {
+                let user = await db.User.create ({
                     first_name: req.body.first_name,
                     last_name: req.body.last_name,
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     birth_date: req.body.birth_date,
-                    image: image  
-            })
-            .then(user =>{
+                    image: image
+                });
                 req.session.userLogged = user;
                 res.redirect('./users/userProfile');
-            })
+            } else {                
+                return res.render (
+                    './users/register',
+                    {errors:{ email: {msg: "Ya existe un usuario registrado con ese email"}},
+                    old: req.body}
+                );
+            };
 
+            
         } else{
             return res.render ('./users/register', {errors:errors.mapped(), old: req.body});
         };        
@@ -46,7 +59,7 @@ const usersController ={
     login: (req, res)=>{ res.render ('./users/login')},
 
     loginProcess: (req, res) => {
-        let errors = validationResult(req);
+        let errors = validationResult(req);        
         let userToLogin = undefined;
         if(errors.isEmpty()){
             users.findAll()
@@ -84,11 +97,6 @@ const usersController ={
     userProfile: (req, res) => {
         res.render ('./users/userProfile');
 
-        // if(req.session.userLogged != undefined){
-        //     loggedUser = req.session.userLogged;
-        //     return res.render ('./users/userProfile', loggedUser);
-
-        // }
     }
 }
 

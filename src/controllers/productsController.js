@@ -102,8 +102,6 @@ const productsController ={
 				creation_date: new Date()
 			})
 			await newCourse.addSubtitles(req.body.subtitle_id)
-			console.log(req.body)
-			
 			res.redirect ('./products')
 
         } else{
@@ -142,7 +140,6 @@ const productsController ={
 		courseToEdit.subtitles.forEach((language) => {selectedSubtitles.push(language.id)})
 		res.render ('./products/editProduct',{productToEdit: courseToEdit, categories, currencies, audioLangs, subtitles, selectedSubtitles, toThousand})
 		
-		console.log(selectedSubtitles)
     },
 
 // EDITA - Method to Update
